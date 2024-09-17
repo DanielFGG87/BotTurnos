@@ -12,7 +12,7 @@ function horarioActual() {
     const currentDay = currentDate.getDay(); // Día de la semana (0 es domingo, 6 es sábado)
 
     // Definimos que el horario de atención es de lunes a viernes, de 8:00 a 18:00
-    if (currentDay >= 1 && currentDay <= 5 && currentHour >= 8 && currentHour < 18) {
+    if (currentDay >= 1 && currentDay <= 5 && currentHour >= 9 && currentHour < 18) {
         return true; // Dentro del horario de atención
     }
     return false; // Fuera del horario de atención
