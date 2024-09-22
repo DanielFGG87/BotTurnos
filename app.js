@@ -12,7 +12,7 @@ function horarioActual() {
     const currentDay = currentDate.getDay(); // Día de la semana (0 es domingo, 6 es sábado)
 
     // Definimos que el horario de atención es de lunes a viernes, de 8:00 a 18:00
-    if (currentDay >= 1 && currentDay <= 5 && currentHour >= 9 && currentHour < 18) {
+    if (currentDay >= 1 && currentDay <= 6 && currentHour >= 1 && currentHour < 23) {
         return true; // Dentro del horario de atención
     }
     return false; // Fuera del horario de atención
@@ -615,7 +615,7 @@ const flowConsultorio = addKeyword(['1','consultorio','medico'])
         '*2.-* Clinica Medica',
         '*3.-* Cirugia',
         '*4.-* Dermatologia',
-        '*5.-* Endodrinologia',
+        '*5.-* Endocrinologia',
         '*6.-* Fonoaudiologia',
         '*7.-* Gastroenterologia',
         '*8.-* Ginecologia',
@@ -786,9 +786,9 @@ const flowEspirometria = addKeyword(['12','espirometria'])
         null,
         null,
         [
-            flowEstGastroenterologicos, flowEspirometria, flowRayos, flowEspinografia, flowTomografia, flowMamografia, 
+            flowLaboratorio, flowEstGastroenterologicos, flowEspirometria, flowRayos, flowEspinografia, flowTomografia, flowMamografia, 
             flowMagnificaciones, flowEcocardiograma, flowElectroenfacelograma, 
-            flowDoppler, flowEstAudiologicos,flowLaboratorio
+            flowDoppler, flowEstAudiologicos
         ])
     
 
@@ -816,7 +816,7 @@ const flowResTurno = addKeyword(['1','turno']).addAnswer(
 
 // ######
 
-const flowModificarT = addKeyword(['1','mopdificar']).addAnswer([
+const flowModificarT = addKeyword(['1','modificar']).addAnswer([
 'Indique los siguientes datos para poder modificar su turno',
         'Apellido y nombre:',
         'DNI:',
@@ -877,7 +877,7 @@ const flowConsultas = addKeyword(['4','consultas'])
 
 
 
-const flowHorarioAtencion = addKeyword(['hola'])
+const flowHorarioAtencion = addKeyword(['repollo'])
     .addAnswer(
         [
         //'¡Hola!',
@@ -894,19 +894,25 @@ const flowHorarioAtencion = addKeyword(['hola'])
         null,
         [flowConsultas, flowConfirmacion, flowModificarCancelarT, flowResTurno]
     )
+const flowFueraDeHorario = addKeyword(['repollo']).addAnswer([
+    '*Horarios de atención*',
+    'Lunes a viernes (días hábiles) de 7:00 a 12:00 Hs.',
+    'Los *mensajes no quedan guardados*',
+    'Por favor, vuelva a comunicarse.',
+    'Muchas gracias'
+])
 
-
- const flowPrincipal = addKeyword(['¡Hola!'])
+ const flowPrincipal = addKeyword(['repollo'])
     .addAction(async (_, {flowDynamic, gotoFlow}) => {
         // Verifica si está en horario de atención o no
     if (horarioActual()) {
             // Si está en horario de atención, redirige a `flowHorarioAtencion`
-        await flowDynamic('horario de atencion')
+        await flowDynamic('¡Hola!')
         return gotoFlow(flowHorarioAtencion)
              // Cambiado para redirigir correctamente
     } else {
          // Si está fuera de horario, redirige a `flowFueraDeHorario`
-         await flowDynamic('¡Hola! Actualmente estamos fuera del horario de atención. 🕔')
+         await flowDynamic('¡Hola! Actualmente estamos *FUERA DEL HORARIO DE ATENCIÓN*. 🕔')
          return gotoFlow(flowFueraDeHorario) // Cambiado para redirigir correctamente
         }
     })
