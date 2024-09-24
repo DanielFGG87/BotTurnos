@@ -1,98 +1,27 @@
 [handleMsg]:  {
   key: {
-    remoteJid: '5492345426549@s.whatsapp.net',
+    remoteJid: '5492345662340@s.whatsapp.net',
     fromMe: false,
-    id: '92FB5C804E0576C01AFE61256B063C01',
+    id: '5494DA202BB20B59288634611B4F82BD',
     participant: undefined
   },
-  messageTimestamp: 1726959862,
-  pushName: 'Papo',
+  messageTimestamp: 1727137116,
+  pushName: 'Estefania Danciul',
   broadcast: false,
   message: Message {
-    stickerMessage: StickerMessage {
-      url: 'https://mmg.whatsapp.net/v/t62.15575-24/24264885_382760428214243_9041976095852386481_n.enc?ccb=11-4&oh=01_Q5AaIM0txEk_MFe6h6SfRUA3GtohkJXaJnv0aOWdI2-bi05G&oe=6716C389&_nc_sid=5e03e0&mms3=true',
-      fileSha256: [Uint8Array],
-      fileEncSha256: [Uint8Array],
-      mediaKey: [Uint8Array],
-      mimetype: 'image/webp',
-      height: 64,
-      width: 64,
-      directPath: '/v/t62.15575-24/24264885_382760428214243_9041976095852386481_n.enc?ccb=11-4&oh=01_Q5AaIM0txEk_MFe6h6SfRUA3GtohkJXaJnv0aOWdI2-bi05G&oe=6716C389&_nc_sid=5e03e0',
-      fileLength: [Long],
-      mediaKeyTimestamp: [Long],
-      firstFrameLength: 4884,
-      firstFrameSidecar: [Uint8Array],
-      isAnimated: true,
-      stickerSentTs: [Long],
-      isAvatar: false
-    },
+    conversation: 'Repollo',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  verifiedBizName: 'Papo',
-  body: '_event_media__45710518-c7ff-4653-a824-97ebd969c9db',
-  from: '5492345426549'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5492345525678@s.whatsapp.net',
-    fromMe: false,
-    id: '46FD20A630B252F40B122B8660E6AE27',
-    participant: undefined
-  },
-  messageTimestamp: 1726959888,
-  pushName: 'María Eugenia Carbonari',
-  broadcast: false,
-  message: Message {
-    audioMessage: AudioMessage {
-      url: 'https://mmg.whatsapp.net/v/t62.7117-24/13847949_496823049900387_6334491837406598036_n.enc?ccb=11-4&oh=01_Q5AaIIgn2cxTFOH8FuRvpSoSUaAjaAxsJxnLtjlSFArAJcl-&oe=6716BE58&_nc_sid=5e03e0&mms3=true',
-      mimetype: 'audio/ogg; codecs=opus',
-      fileSha256: [Uint8Array],
-      fileLength: [Long],
-      seconds: 43,
-      ptt: true,
-      mediaKey: [Uint8Array],
-      fileEncSha256: [Uint8Array],
-      directPath: '/v/t62.7117-24/13847949_496823049900387_6334491837406598036_n.enc?ccb=11-4&oh=01_Q5AaIIgn2cxTFOH8FuRvpSoSUaAjaAxsJxnLtjlSFArAJcl-&oe=6716BE58&_nc_sid=5e03e0',
-      mediaKeyTimestamp: [Long],
-      waveform: [Uint8Array]
-    },
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2
-    }
-  },
-  body: '_event_voice_note__3a5c8e25-f380-4d0d-9aa8-dfd184554ac1',
-  from: '5492345525678'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5492345426549@s.whatsapp.net',
-    fromMe: false,
-    id: '38D686D9B1E447F100A952271A29E287',
-    participant: undefined
-  },
-  messageTimestamp: 1726959915,
-  pushName: 'Papo',
-  broadcast: false,
-  message: Message {
-    conversation: 'Repollo solo te escribo?',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  verifiedBizName: 'Papo',
-  body: 'Repollo solo te escribo?',
-  from: '5492345426549'
+  body: 'Repollo',
+  from: '5492345662340'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_09052e73-8d32-40d3-a744-31c6715186dc',
-  keyword: 'key_6df56cb0-1a13-4290-aaf9-40b1c3959421',
+  ref: 'ans_07c374fb-6475-479c-905a-082bc3d4edbc',
+  keyword: 'key_94a752b5-3472-41ea-a3c8-8a774704b6e7',
   answer: '__call_action__',
   options: {
     media: null,
@@ -106,17 +35,17 @@
     keyword: {},
     callback: true
   },
-  refSerialize: '9b5d4e885ccc6036e866b6b3ea7fd715'
+  refSerialize: '24ac490e4a197969331e5ad7a6d83e55'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5492345426549@s.whatsapp.net',
+    remoteJid: '5492345662340@s.whatsapp.net',
     fromMe: false,
-    id: 'FCD713BCB6B863EDB9B57F5CC2D5CBA0',
+    id: '015CB3A84A8E8462C952D26B236739E7',
     participant: undefined
   },
-  messageTimestamp: 1726959934,
-  pushName: 'Papo',
+  messageTimestamp: 1727137118,
+  pushName: 'Estefania Danciul',
   broadcast: false,
   message: Message {
     conversation: '1',
@@ -127,11 +56,11 @@
     }
   },
   body: '1',
-  from: '5492345426549'
+  from: '5492345662340'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_2c1cb8a0-f1a8-4a40-b0e2-5fd9cf07b13a',
-  keyword: 'key_6bd7e0aa-7234-4852-b39e-9767c5bfc867',
+  ref: 'ans_a700ab43-e9d0-4f79-b935-c5c3dbdeb4b7',
+  keyword: 'key_083d8622-da21-4e5b-8158-c94900aad53f',
   answer: 'Aqui podes selecionar el numero al tipo de especialidad a la cual quieres pedir turno, recuerda que debes cumplir ciertos requisitos que estaran informados\n' +
     ' \n' +
     ' \n' +
@@ -149,114 +78,17 @@
     keyword: {},
     callback: false
   },
-  refSerialize: '316c565dccf4e84d917f18d9be271341'
+  refSerialize: '9e2f1b9b9750f340cb7e4d08e00d674d'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5492345426549@s.whatsapp.net',
+    remoteJid: '5492345662340@s.whatsapp.net',
     fromMe: false,
-    id: '3EFE0EBF5B5D8D13FAEDEDCA7BB42DF6',
+    id: 'F20DA3F073628646834D7A3F46FB9B41',
     participant: undefined
   },
-  messageTimestamp: 1726959946,
-  pushName: 'Papo',
-  broadcast: false,
-  message: Message {
-    conversation: 'Bien ahí con el bot',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'Bien ahí con el bot',
-  from: '5492345426549'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5492345426549@s.whatsapp.net',
-    fromMe: false,
-    id: '9D3DC8A41D5237A92678576C2D035603',
-    participant: undefined
-  },
-  messageTimestamp: 1726959982,
-  pushName: 'Papo',
-  broadcast: false,
-  message: Message {
-    stickerMessage: StickerMessage {
-      url: 'https://mmg.whatsapp.net/v/t62.15575-24/18984404_892386189490514_1320962314106732991_n.enc?ccb=11-4&oh=01_Q5AaIF4wvy4R_PqnYdDD5BCLcNMH0czPo0UzM64DwbH6xRzh&oe=6716C295&_nc_sid=5e03e0&mms3=true',
-      fileSha256: [Uint8Array],
-      fileEncSha256: [Uint8Array],
-      mediaKey: [Uint8Array],
-      mimetype: 'image/webp',
-      height: 64,
-      width: 64,
-      directPath: '/v/t62.15575-24/18984404_892386189490514_1320962314106732991_n.enc?ccb=11-4&oh=01_Q5AaIF4wvy4R_PqnYdDD5BCLcNMH0czPo0UzM64DwbH6xRzh&oe=6716C295&_nc_sid=5e03e0',
-      fileLength: [Long],
-      mediaKeyTimestamp: [Long],
-      firstFrameLength: 7142,
-      firstFrameSidecar: [Uint8Array],
-      isAnimated: true,
-      stickerSentTs: [Long],
-      isAvatar: false
-    },
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '_event_media__ef1dd385-72df-4395-96b9-7d9d02005652',
-  from: '5492345426549'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
-    fromMe: false,
-    id: '8B66290CF9FCE9182AAD0B853DEE8F12',
-    participant: undefined
-  },
-  messageTimestamp: 1726960024,
-  pushName: 'Daniel',
-  broadcast: false,
-  message: Message {
-    conversation: 'Repollo',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'Repollo',
-  from: '5491150579753'
-}
-[QUEUE_SE_ENVIO]:  {
-  ref: 'ans_09052e73-8d32-40d3-a744-31c6715186dc',
-  keyword: 'key_6df56cb0-1a13-4290-aaf9-40b1c3959421',
-  answer: '__call_action__',
-  options: {
-    media: null,
-    buttons: [],
-    capture: false,
-    child: null,
-    delay: 0,
-    idle: null,
-    ref: null,
-    nested: [],
-    keyword: {},
-    callback: true
-  },
-  refSerialize: '9b5d4e885ccc6036e866b6b3ea7fd715'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
-    fromMe: false,
-    id: '0FDC41C7AA001B94D9AB2E0B57E064D2',
-    participant: undefined
-  },
-  messageTimestamp: 1726960030,
-  pushName: 'Daniel',
+  messageTimestamp: 1727137121,
+  pushName: 'Estefania Danciul',
   broadcast: false,
   message: Message {
     conversation: '1',
@@ -267,536 +99,23 @@
     }
   },
   body: '1',
-  from: '5491150579753'
+  from: '5492345662340'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_2c1cb8a0-f1a8-4a40-b0e2-5fd9cf07b13a',
-  keyword: 'key_6bd7e0aa-7234-4852-b39e-9767c5bfc867',
-  answer: 'Aqui podes selecionar el numero al tipo de especialidad a la cual quieres pedir turno, recuerda que debes cumplir ciertos requisitos que estaran informados\n' +
-    ' \n' +
-    ' \n' +
-    '*1.-* Consultorios Medicos\n' +
-    '*2.-* Estudios de Diagnostico',
-  options: {
-    media: null,
-    buttons: [],
-    capture: false,
-    child: null,
-    delay: 0,
-    idle: null,
-    ref: null,
-    nested: [ [Object], [Object], [Object], [Object] ],
-    keyword: {},
-    callback: false
-  },
-  refSerialize: '316c565dccf4e84d917f18d9be271341'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
-    fromMe: false,
-    id: '9F6FD8102EF6C9B31152499B30DE630F',
-    participant: undefined
-  },
-  messageTimestamp: 1726960034,
-  pushName: 'Daniel',
-  broadcast: false,
-  message: Message {
-    conversation: '2',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '2',
-  from: '5491150579753'
-}
-[QUEUE_SE_ENVIO]:  {
-  ref: 'ans_1cc51e92-89a7-4dc1-86fb-88b343817531',
-  keyword: 'key_8f52d70e-710f-4b86-b724-12f04228a1dc',
-  answer: '*1.-* Rayos\n' +
-    '*2.-* Espinografia\n' +
-    '*3.-* Tomografía\n' +
-    '*4.-* Mamografía\n' +
-    '*5.-* Magnificaciones\n' +
-    '*6.-* Ecocardiograma\n' +
-    '*7.-* Electroencefalograma\n' +
-    '*8.-* Doppler\n' +
-    '*9.-* Estudios Audiologicos\n' +
-    '*10.-* Estudios Gastroenterológicos\n' +
-    '*11.-* Laboratorio\n' +
-    '*12.-* Espirometria',
-  options: {
-    media: null,
-    buttons: [],
-    capture: false,
-    child: null,
-    delay: 0,
-    idle: null,
-    ref: null,
-    nested: [
-      [Object], [Object], [Object],
-      [Object], [Object], [Object],
-      [Object], [Object], [Object],
-      [Object], [Object], [Object],
-      [Object], [Object], [Object],
-      [Object], [Object], [Object],
-      [Object], [Object], [Object],
-      [Object], [Object], [Object]
-    ],
-    keyword: {},
-    callback: false
-  },
-  refSerialize: '9ce68c96ab28ee1686409a5252208e10'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
-    fromMe: false,
-    id: 'D18232F965C86B6C15F4D237F7F6C9A2',
-    participant: undefined
-  },
-  messageTimestamp: 1726960038,
-  pushName: 'Daniel',
-  broadcast: false,
-  message: Message {
-    conversation: '11',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '11',
-  from: '5491150579753'
-}
-[QUEUE_SE_ENVIO]:  {
-  ref: 'ans_5ee4970b-6a76-41ea-9e6d-1bd6f04b793a',
-  keyword: 'key_b4411b1d-1753-48e3-9d4d-ec60d453a92c',
-  answer: 'Enviar foto de la orden de indicación\n' +
-    '\n' +
-    '   Apellido y Nombre:\n' +
-    '\n' +
-    '   DNI:\n' +
-    '\n' +
-    '   Fecha de Nacimiento:\n' +
-    '\n' +
-    '   Localidad:\n' +
-    '\n' +
-    '   *Obra social (recuerde que los pacientes de PAMI deben dirigirse a la agencia de PAMI para consultar convenio o puede también hacerlo telefónicamente a nuestras líneas fijas)*\n' +
-    '\n' +
-    '    Y luego aguarde mientras gestionamos su turno, recibirá un mensaje con la confirmación del mismo',
-  options: {
-    media: null,
-    buttons: [],
-    capture: false,
-    child: null,
-    delay: 0,
-    idle: null,
-    ref: null,
-    nested: [],
-    keyword: {},
-    callback: false
-  },
-  refSerialize: 'c3a1231dbb95b111915c60d78ffd8520'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
-    fromMe: false,
-    id: '4FAAC23F48C3BF0EF2E2605C7426EBCE',
-    participant: undefined
-  },
-  messageTimestamp: 1726960064,
-  pushName: 'Daniel',
-  broadcast: false,
-  message: Message {
-    conversation: 'Así está bien?',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'Así está bien?',
-  from: '5491150579753'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5492345525678@s.whatsapp.net',
-    fromMe: false,
-    id: 'FA91C362E6727359267033F7E38ED9E6',
-    participant: undefined
-  },
-  messageTimestamp: 1726960135,
-  pushName: 'María Eugenia Carbonari',
-  broadcast: false,
-  message: Message {
-    audioMessage: AudioMessage {
-      url: 'https://mmg.whatsapp.net/v/t62.7117-24/23559316_1221925632289133_3720309309152092016_n.enc?ccb=11-4&oh=01_Q5AaIKSv5WAHtQxIpc6pGd_SRQ04rlfoYykJUr7LFrpQrL6r&oe=6716B963&_nc_sid=5e03e0&mms3=true',
-      mimetype: 'audio/ogg; codecs=opus',
-      fileSha256: [Uint8Array],
-      fileLength: [Long],
-      seconds: 7,
-      ptt: true,
-      mediaKey: [Uint8Array],
-      fileEncSha256: [Uint8Array],
-      directPath: '/v/t62.7117-24/23559316_1221925632289133_3720309309152092016_n.enc?ccb=11-4&oh=01_Q5AaIKSv5WAHtQxIpc6pGd_SRQ04rlfoYykJUr7LFrpQrL6r&oe=6716B963&_nc_sid=5e03e0',
-      mediaKeyTimestamp: [Long],
-      waveform: [Uint8Array]
-    },
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2
-    }
-  },
-  body: '_event_voice_note__413ab846-1997-43c1-a5b8-88ac0d08450a',
-  from: '5492345525678'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5492345417064@s.whatsapp.net',
-    fromMe: false,
-    id: '5ADCF8E770219CCBE290F99457DE1EA4',
-    participant: undefined
-  },
-  messageTimestamp: 1726960156,
-  pushName: 'Matias',
-  broadcast: false,
-  message: Message {
-    conversation: 'Yyyy ?',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'Yyyy ?',
-  from: '5492345417064'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
-    fromMe: false,
-    id: '524F03E3C5DD601285641325C1C08F10',
-    participant: undefined
-  },
-  messageTimestamp: 1726960164,
-  pushName: 'Daniel',
-  broadcast: false,
-  message: Message {
-    conversation: 'Repollo',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'Repollo',
-  from: '5491150579753'
-}
-[QUEUE_SE_ENVIO]:  {
-  ref: 'ans_09052e73-8d32-40d3-a744-31c6715186dc',
-  keyword: 'key_6df56cb0-1a13-4290-aaf9-40b1c3959421',
-  answer: '__call_action__',
-  options: {
-    media: null,
-    buttons: [],
-    capture: false,
-    child: null,
-    delay: 0,
-    idle: null,
-    ref: null,
-    nested: [],
-    keyword: {},
-    callback: true
-  },
-  refSerialize: '9b5d4e885ccc6036e866b6b3ea7fd715'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
-    fromMe: false,
-    id: '3A22675E7040065F0CE836829B03B4F5',
-    participant: undefined
-  },
-  messageTimestamp: 1726960169,
-  pushName: 'Daniel',
-  broadcast: false,
-  message: Message {
-    conversation: '1',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '1',
-  from: '5491150579753'
-}
-[QUEUE_SE_ENVIO]:  {
-  ref: 'ans_2c1cb8a0-f1a8-4a40-b0e2-5fd9cf07b13a',
-  keyword: 'key_6bd7e0aa-7234-4852-b39e-9767c5bfc867',
-  answer: 'Aqui podes selecionar el numero al tipo de especialidad a la cual quieres pedir turno, recuerda que debes cumplir ciertos requisitos que estaran informados\n' +
-    ' \n' +
-    ' \n' +
-    '*1.-* Consultorios Medicos\n' +
-    '*2.-* Estudios de Diagnostico',
-  options: {
-    media: null,
-    buttons: [],
-    capture: false,
-    child: null,
-    delay: 0,
-    idle: null,
-    ref: null,
-    nested: [ [Object], [Object], [Object], [Object] ],
-    keyword: {},
-    callback: false
-  },
-  refSerialize: '316c565dccf4e84d917f18d9be271341'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
-    fromMe: false,
-    id: '2F633CB1A8751305B7CCB1E4C374F379',
-    participant: undefined
-  },
-  messageTimestamp: 1726960173,
-  pushName: 'Daniel',
-  broadcast: false,
-  message: Message {
-    conversation: '2',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '2',
-  from: '5491150579753'
-}
-[QUEUE_SE_ENVIO]:  {
-  ref: 'ans_1cc51e92-89a7-4dc1-86fb-88b343817531',
-  keyword: 'key_8f52d70e-710f-4b86-b724-12f04228a1dc',
-  answer: '*1.-* Rayos\n' +
-    '*2.-* Espinografia\n' +
-    '*3.-* Tomografía\n' +
-    '*4.-* Mamografía\n' +
-    '*5.-* Magnificaciones\n' +
-    '*6.-* Ecocardiograma\n' +
-    '*7.-* Electroencefalograma\n' +
-    '*8.-* Doppler\n' +
-    '*9.-* Estudios Audiologicos\n' +
-    '*10.-* Estudios Gastroenterológicos\n' +
-    '*11.-* Laboratorio\n' +
-    '*12.-* Espirometria',
-  options: {
-    media: null,
-    buttons: [],
-    capture: false,
-    child: null,
-    delay: 0,
-    idle: null,
-    ref: null,
-    nested: [
-      [Object], [Object], [Object],
-      [Object], [Object], [Object],
-      [Object], [Object], [Object],
-      [Object], [Object], [Object],
-      [Object], [Object], [Object],
-      [Object], [Object], [Object],
-      [Object], [Object], [Object],
-      [Object], [Object], [Object]
-    ],
-    keyword: {},
-    callback: false
-  },
-  refSerialize: '9ce68c96ab28ee1686409a5252208e10'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5492345426549@s.whatsapp.net',
-    fromMe: false,
-    id: '450E0698FEA0966CCD62FE5F8C6C5C65',
-    participant: undefined
-  },
-  messageTimestamp: 1726960179,
-  pushName: 'Papo',
-  broadcast: false,
-  message: Message {
-    conversation: 'Un lujo amiga',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'Un lujo amiga',
-  from: '5492345426549'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
-    fromMe: false,
-    id: 'D1C3FBD2219944D84B362647BDA9796B',
-    participant: undefined
-  },
-  messageTimestamp: 1726960198,
-  pushName: 'Daniel',
-  broadcast: false,
-  message: Message {
-    conversation: 'Repollo',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'Repollo',
-  from: '5491150579753'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
-    fromMe: false,
-    id: '3B5F1C6CEFD8A3C58C692093E2F38004',
-    participant: undefined
-  },
-  messageTimestamp: 1726960202,
-  pushName: 'Daniel',
-  broadcast: false,
-  message: Message {
-    conversation: '1',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '1',
-  from: '5491150579753'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
-    fromMe: false,
-    id: '8D0860B189F673D740DEEDBA53D0762A',
-    participant: undefined
-  },
-  messageTimestamp: 1726960210,
-  pushName: 'Daniel',
-  broadcast: false,
-  message: Message {
-    conversation: 'Repollo',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'Repollo',
-  from: '5491150579753'
-}
-[QUEUE_SE_ENVIO]:  {
-  ref: 'ans_09052e73-8d32-40d3-a744-31c6715186dc',
-  keyword: 'key_6df56cb0-1a13-4290-aaf9-40b1c3959421',
-  answer: '__call_action__',
-  options: {
-    media: null,
-    buttons: [],
-    capture: false,
-    child: null,
-    delay: 0,
-    idle: null,
-    ref: null,
-    nested: [],
-    keyword: {},
-    callback: true
-  },
-  refSerialize: '9b5d4e885ccc6036e866b6b3ea7fd715'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
-    fromMe: false,
-    id: 'AB25404A5E30FFC368434A579E2540E2',
-    participant: undefined
-  },
-  messageTimestamp: 1726960223,
-  pushName: 'Daniel',
-  broadcast: false,
-  message: Message {
-    conversation: '1',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '1',
-  from: '5491150579753'
-}
-[QUEUE_SE_ENVIO]:  {
-  ref: 'ans_2c1cb8a0-f1a8-4a40-b0e2-5fd9cf07b13a',
-  keyword: 'key_6bd7e0aa-7234-4852-b39e-9767c5bfc867',
-  answer: 'Aqui podes selecionar el numero al tipo de especialidad a la cual quieres pedir turno, recuerda que debes cumplir ciertos requisitos que estaran informados\n' +
-    ' \n' +
-    ' \n' +
-    '*1.-* Consultorios Medicos\n' +
-    '*2.-* Estudios de Diagnostico',
-  options: {
-    media: null,
-    buttons: [],
-    capture: false,
-    child: null,
-    delay: 0,
-    idle: null,
-    ref: null,
-    nested: [ [Object], [Object], [Object], [Object] ],
-    keyword: {},
-    callback: false
-  },
-  refSerialize: '316c565dccf4e84d917f18d9be271341'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
-    fromMe: false,
-    id: 'B1616AFED55484E0A3DBFCB8726D886D',
-    participant: undefined
-  },
-  messageTimestamp: 1726960227,
-  pushName: 'Daniel',
-  broadcast: false,
-  message: Message {
-    conversation: '1',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: '1',
-  from: '5491150579753'
-}
-[QUEUE_SE_ENVIO]:  {
-  ref: 'ans_53fedcff-5b88-457a-bc2b-b5e88d4d52c1',
-  keyword: 'key_af6d685e-d333-4b72-8f31-93fbd83b5781',
+  ref: 'ans_eae744d3-ac47-43aa-9376-d1c372de24bb',
+  keyword: 'key_49d72cd5-95c7-46de-b090-62bdda506823',
   answer: 'Indicar especialidad requerida\n' +
     ' \n' +
     '*1.-* Cardiologia\n' +
     '*2.-* Clinica Medica\n' +
     '*3.-* Cirugia\n' +
     '*4.-* Dermatologia\n' +
-    '*5.-* Endodrinologia\n' +
+    '*5.-* Endocrinologia\n' +
     '*6.-* Fonoaudiologia\n' +
     '*7.-* Gastroenterologia\n' +
     '*8.-* Ginecologia\n' +
     '*9.-* Hematologia\n' +
-    '*10.-* Neurologia\n' +
+    '*10.-* Neurocirugia\n' +
     '*11.-* Oftalmologia\n' +
     '*12.-* Oncologia\n' +
     '*13.-* Psiquiatria\n' +
@@ -813,7 +132,8 @@
     '*24.-* Vacunacion\n' +
     '*25.-* Kinesiologia\n' +
     '*26.-* Terapia ocupacional\n' +
-    '*27.-* Psicologia',
+    '*27.-* Psicologia\n' +
+    '*28.-* Neurologia',
   options: {
     media: null,
     buttons: [],
@@ -838,37 +158,37 @@
       [Object], [Object], [Object], [Object], [Object],
       [Object], [Object], [Object], [Object], [Object],
       [Object], [Object], [Object], [Object], [Object],
-      [Object], [Object]
+      [Object], [Object], [Object], [Object], [Object]
     ],
     keyword: {},
     callback: false
   },
-  refSerialize: '63e2b3c5c84ff258a7c2e69e2e9d8326'
+  refSerialize: '5a7c1e70be93a9b0e72e4688ebdde4a9'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
+    remoteJid: '5492345662340@s.whatsapp.net',
     fromMe: false,
-    id: 'CE7C7D9CABC8C4EDAC8A32DA406897D7',
+    id: 'D9D9AEB38E79992204AC50D79FB12D32',
     participant: undefined
   },
-  messageTimestamp: 1726960262,
-  pushName: 'Daniel',
+  messageTimestamp: 1727137128,
+  pushName: 'Estefania Danciul',
   broadcast: false,
   message: Message {
-    conversation: '5',
+    conversation: '28',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: '5',
-  from: '5491150579753'
+  body: '28',
+  from: '5492345662340'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_bf638424-1ff8-44d1-9979-27d60c682e79',
-  keyword: 'key_15b1d4a3-9e94-43f0-8df5-dc7d44e57e2a',
+  ref: 'ans_0e1ac178-d6c1-4750-b21b-84a78fc4b28d',
+  keyword: 'key_3ee850fe-5ca7-42b7-a476-17457eafa10e',
   answer: 'Por favor selecione el medico',
   options: {
     media: null,
@@ -882,12 +202,12 @@
     keyword: {},
     callback: false
   },
-  refSerialize: '3d8632c59f2b221f360cbd9affe0b10c'
+  refSerialize: '8cff003cc37dbfc8c17906505d9419d0'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_66dab102-fa3d-46bc-8095-73c2e2f60679',
-  keyword: 'ans_bf638424-1ff8-44d1-9979-27d60c682e79',
-  answer: '*1*.- Dra. Feretta',
+  ref: 'ans_145377d3-1def-4f1e-a1d3-228bd6fe940c',
+  keyword: 'ans_0e1ac178-d6c1-4750-b21b-84a78fc4b28d',
+  answer: '*1*.- Dra. Ayarza Ana',
   options: {
     media: null,
     buttons: [],
@@ -900,38 +220,17 @@
     keyword: {},
     callback: false
   },
-  refSerialize: '6cde88a391382e510222d4ea73d623fa'
+  refSerialize: 'e012258922446df18315a2a9459778c5'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5492345417064@s.whatsapp.net',
+    remoteJid: '5492345662340@s.whatsapp.net',
     fromMe: false,
-    id: 'EF1536130DD283EF14064240F568CDE4',
+    id: 'E19C7329CACC9C42DE6A92054D679569',
     participant: undefined
   },
-  messageTimestamp: 1726960265,
-  pushName: 'Matias',
-  broadcast: false,
-  message: Message {
-    conversation: 'Cambio de planes ???',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'Cambio de planes ???',
-  from: '5492345417064'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
-    fromMe: false,
-    id: '64F6597E7F599F1740D41DCA6560CD1F',
-    participant: undefined
-  },
-  messageTimestamp: 1726960268,
-  pushName: 'Daniel',
+  messageTimestamp: 1727137131,
+  pushName: 'Estefania Danciul',
   broadcast: false,
   message: Message {
     conversation: '1',
@@ -942,11 +241,11 @@
     }
   },
   body: '1',
-  from: '5491150579753'
+  from: '5492345662340'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_c7306c11-df37-45b8-ac2f-fb4e38788958',
-  keyword: 'key_75feafd3-3040-4521-b7bd-c776f7648120',
+  ref: 'ans_63e65abb-2118-4d0a-931d-60538ff6a110',
+  keyword: 'key_b23fa506-007d-4ca5-90da-5b8ee4ce708f',
   answer: 'Por favor, ingrese los siguientes datos:\n' +
     '\n' +
     '    Apellido y Nombre:\n' +
@@ -972,478 +271,391 @@
     keyword: {},
     callback: false
   },
-  refSerialize: '8aa30032abb0b56d8d87f4265e02a8d8'
+  refSerialize: 'c961948c805d9f25445d476263d90e4d'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
+    remoteJid: '5492345662340@s.whatsapp.net',
     fromMe: false,
-    id: '821748F935A9D5B7A2D126F8488C126E',
+    id: '4FE4A778402B8D09F13EEFE91F10D6A0',
     participant: undefined
   },
-  messageTimestamp: 1726960307,
-  pushName: 'Daniel',
+  messageTimestamp: 1727137135,
+  pushName: 'Estefania Danciul',
   broadcast: false,
   message: Message {
-    conversation: 'Endocrinólogo puse 😖',
+    conversation: 'Espectacular',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'Endocrinólogo puse 😖',
-  from: '5491150579753'
+  body: 'Espectacular',
+  from: '5492345662340'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
+    remoteJid: '5492345662340@s.whatsapp.net',
     fromMe: false,
-    id: '86D23CE6011BD3DE54569D63A16C73A6',
+    id: 'D352B8B6141E90AB9405706614A818A3',
     participant: undefined
   },
-  messageTimestamp: 1726960319,
-  pushName: 'Daniel',
+  messageTimestamp: 1727137140,
+  pushName: 'Estefania Danciul',
   broadcast: false,
   message: Message {
+    conversation: 'Repollo',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
-    },
-    editedMessage: FutureProofMessage { message: [Message] }
+    }
   },
-  body: '',
-  from: '5491150579753'
+  body: 'Repollo',
+  from: '5492345662340'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_07c374fb-6475-479c-905a-082bc3d4edbc',
+  keyword: 'key_94a752b5-3472-41ea-a3c8-8a774704b6e7',
+  answer: '__call_action__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '24ac490e4a197969331e5ad7a6d83e55'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5492345525678@s.whatsapp.net',
+    remoteJid: '5492345662340@s.whatsapp.net',
     fromMe: false,
-    id: 'AB1BE02AD66894FDA0837865262E7575',
+    id: '78BF9714AC2AE2C6682F8F7C46036F68',
     participant: undefined
   },
-  messageTimestamp: 1726960673,
-  pushName: 'María Eugenia Carbonari',
+  messageTimestamp: 1727137144,
+  pushName: 'Estefania Danciul',
   broadcast: false,
   message: Message {
-    stickerMessage: StickerMessage {
-      url: 'https://mmg.whatsapp.net/v/t62.15575-24/40715263_510941078197428_136486839361535688_n.enc?ccb=11-4&oh=01_Q5AaIAzDTT4NwK-9eUoFTNuKb-vGQ1kwQ4ICnkQZdWxP_vsF&oe=6716D4A0&_nc_sid=5e03e0&mms3=true',
+    conversation: '1',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: '1',
+  from: '5492345662340'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_a700ab43-e9d0-4f79-b935-c5c3dbdeb4b7',
+  keyword: 'key_083d8622-da21-4e5b-8158-c94900aad53f',
+  answer: 'Aqui podes selecionar el numero al tipo de especialidad a la cual quieres pedir turno, recuerda que debes cumplir ciertos requisitos que estaran informados\n' +
+    ' \n' +
+    ' \n' +
+    '*1.-* Consultorios Medicos\n' +
+    '*2.-* Estudios de Diagnostico',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [ [Object], [Object], [Object], [Object] ],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '9e2f1b9b9750f340cb7e4d08e00d674d'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5492345662340@s.whatsapp.net',
+    fromMe: false,
+    id: 'D334F2FA8BF6038A0AB42CCBB19608F4',
+    participant: undefined
+  },
+  messageTimestamp: 1727137154,
+  pushName: 'Estefania Danciul',
+  broadcast: false,
+  message: Message {
+    conversation: '2',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: '2',
+  from: '5492345662340'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_ff8341d7-0c89-4a10-afd9-b0caa0ce274c',
+  keyword: 'key_44b2e416-d545-4ff8-b344-ff272975a533',
+  answer: '*1.-* Rayos\n' +
+    '*2.-* Espinografia\n' +
+    '*3.-* Tomografía\n' +
+    '*4.-* Mamografía\n' +
+    '*5.-* Magnificaciones\n' +
+    '*6.-* Ecocardiograma\n' +
+    '*7.-* Electroencefalograma\n' +
+    '*8.-* Doppler\n' +
+    '*9.-* Estudios Audiologicos\n' +
+    '*10.-* Estudios Gastroenterológicos\n' +
+    '*11.-* Laboratorio\n' +
+    '*12.-* Espirometria',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object]
+    ],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '5d645db2124b624e526fb319bdf4d4ff'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5492345662340@s.whatsapp.net',
+    fromMe: false,
+    id: 'B58F181C9E7BFFE2A77277CA58FEBB83',
+    participant: undefined
+  },
+  messageTimestamp: 1727137179,
+  pushName: 'Estefania Danciul',
+  broadcast: false,
+  message: Message {
+    conversation: 'Acá falta ecografía, aunque creo que de momento no la vamos a poner',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Acá falta ecografía, aunque creo que de momento no la vamos a poner',
+  from: '5492345662340'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5492345662340@s.whatsapp.net',
+    fromMe: false,
+    id: 'C60B4B1FCAAC5C6C427DD7EBA0F6D01E',
+    participant: undefined
+  },
+  messageTimestamp: 1727138346,
+  pushName: 'Estefania Danciul',
+  broadcast: false,
+  message: Message {
+    conversation: 'Repollo',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Repollo',
+  from: '5492345662340'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_07c374fb-6475-479c-905a-082bc3d4edbc',
+  keyword: 'key_94a752b5-3472-41ea-a3c8-8a774704b6e7',
+  answer: '__call_action__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '24ac490e4a197969331e5ad7a6d83e55'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5492345662340@s.whatsapp.net',
+    fromMe: false,
+    id: '74D69BDC86BF4F0BBAC3AC677138A7FF',
+    participant: undefined
+  },
+  messageTimestamp: 1727138350,
+  pushName: 'Estefania Danciul',
+  broadcast: false,
+  message: Message {
+    conversation: '3',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: '3',
+  from: '5492345662340'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_b0dbd10c-00d8-440c-b0de-560750187ca4',
+  keyword: 'key_809736cf-62aa-4298-b75b-ddce57cf69ee',
+  answer: 'Has seleccionado al Médico 1. Por favor, ingresa tu nombre:',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: 'd7affefe6d4ec60ea9257c34162f897f'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5492345662340@s.whatsapp.net',
+    fromMe: false,
+    id: 'C95EC329F6D9F88F34C3E18A8EDE0D69',
+    participant: undefined
+  },
+  messageTimestamp: 1727138366,
+  pushName: 'Estefania Danciul',
+  broadcast: false,
+  message: Message {
+    conversation: 'Danciul Estefanía',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2,
+      messageSecret: [Uint8Array]
+    }
+  },
+  body: 'Danciul Estefanía',
+  from: '5492345662340'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '1727138372@broadcast',
+    fromMe: false,
+    id: 'BDAB708DB58046CC3E6316B62BA99632',
+    participant: '5491169759473@s.whatsapp.net'
+  },
+  messageTimestamp: 1727138547,
+  pushName: "Morita's",
+  broadcast: true,
+  message: Message {
+    senderKeyDistributionMessage: SenderKeyDistributionMessage {
+      groupId: '1727138372@broadcast',
+      axolotlSenderKeyDistributionMessage: [Uint8Array]
+    },
+    messageContextInfo: MessageContextInfo { messageSecret: [Uint8Array] },
+    imageMessage: ImageMessage {
+      interactiveAnnotations: [],
+      scanLengths: [],
+      url: 'https://mmg.whatsapp.net/v/t62.7118-24/30136146_492278336953844_171999248008638274_n.enc?ccb=11-4&oh=01_Q5AaIDH4qilvXkn7-stRGTFhlp9RbtOCWkj-qDS5-LeyrxF9&oe=67196057&_nc_sid=5e03e0&mms3=true',
+      mimetype: 'image/jpeg',
       fileSha256: [Uint8Array],
-      fileEncSha256: [Uint8Array],
-      mediaKey: [Uint8Array],
-      mimetype: 'image/webp',
-      height: 64,
-      width: 64,
-      directPath: '/v/t62.15575-24/40715263_510941078197428_136486839361535688_n.enc?ccb=11-4&oh=01_Q5AaIAzDTT4NwK-9eUoFTNuKb-vGQ1kwQ4ICnkQZdWxP_vsF&oe=6716D4A0&_nc_sid=5e03e0',
       fileLength: [Long],
+      height: 1078,
+      width: 1078,
+      mediaKey: [Uint8Array],
+      fileEncSha256: [Uint8Array],
+      directPath: '/v/t62.7118-24/30136146_492278336953844_171999248008638274_n.enc?ccb=11-4&oh=01_Q5AaIDH4qilvXkn7-stRGTFhlp9RbtOCWkj-qDS5-LeyrxF9&oe=67196057&_nc_sid=5e03e0',
       mediaKeyTimestamp: [Long],
-      isAnimated: false,
-      stickerSentTs: [Long],
-      isAvatar: false
-    },
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2
+      jpegThumbnail: [Uint8Array],
+      contextInfo: [ContextInfo]
     }
   },
-  body: '_event_media__ae30f82b-f4f8-45ea-9edf-32e187a7b438',
-  from: '5492345525678'
+  verifiedBizName: "Morita's",
+  body: '_event_media__31612f26-feb4-4841-913c-839ef68b2298',
+  from: '1727138372@broadcast'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5492345681209@s.whatsapp.net',
+    remoteJid: '1727138372@broadcast',
     fromMe: false,
-    id: 'DFB53ACA53389BCADBE53F9ECA20F121',
-    participant: undefined
+    id: '7E23AA49EB3471ECC8FD26FD580FCD38',
+    participant: '5491169759473@s.whatsapp.net'
   },
-  messageTimestamp: 1726960690,
-  pushName: 'Regina',
-  broadcast: false,
+  messageTimestamp: 1727138548,
+  pushName: "Morita's",
+  broadcast: true,
   message: Message {
-    extendedTextMessage: ExtendedTextMessage {
-      text: 'Holissss \n' +
-        'Mañana si andan por acá hay ropa. Saqué de mi ropero todo lo que no uso 🤭',
-      previewType: 0,
+    imageMessage: ImageMessage {
+      interactiveAnnotations: [],
+      scanLengths: [],
+      url: 'https://mmg.whatsapp.net/v/t62.7118-24/40246445_1935479856933357_3977939584821945279_n.enc?ccb=11-4&oh=01_Q5AaIBN-D8bdPuvkqQdTSTd2LI7p68KBkdd-hSS9CmcaOcbL&oe=67198179&_nc_sid=5e03e0&mms3=true',
+      mimetype: 'image/jpeg',
+      fileSha256: [Uint8Array],
+      fileLength: [Long],
+      height: 1600,
+      width: 1187,
+      mediaKey: [Uint8Array],
+      fileEncSha256: [Uint8Array],
+      directPath: '/v/t62.7118-24/40246445_1935479856933357_3977939584821945279_n.enc?ccb=11-4&oh=01_Q5AaIBN-D8bdPuvkqQdTSTd2LI7p68KBkdd-hSS9CmcaOcbL&oe=67198179&_nc_sid=5e03e0',
+      mediaKeyTimestamp: [Long],
+      jpegThumbnail: [Uint8Array],
+      contextInfo: [ContextInfo]
+    },
+    messageContextInfo: MessageContextInfo { messageSecret: [Uint8Array] }
+  },
+  body: '_event_media__be82594a-405c-4451-80a2-7a2120dc009c',
+  from: '1727138372@broadcast'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '1727138372@broadcast',
+    fromMe: false,
+    id: '3D4E30A174446BB2477CE42E62478802',
+    participant: '5491169759473@s.whatsapp.net'
+  },
+  messageTimestamp: 1727138549,
+  pushName: "Morita's",
+  broadcast: true,
+  message: Message {
+    imageMessage: ImageMessage {
+      interactiveAnnotations: [],
+      scanLengths: [Array],
+      url: 'https://mmg.whatsapp.net/v/t62.7118-24/34617411_1354720278837915_1851859295348396505_n.enc?ccb=11-4&oh=01_Q5AaICI5Czze0WARbqcm0zQhhbAjoCMdbH1lWQeQmWD1uXzE&oe=671969AD&_nc_sid=5e03e0&mms3=true',
+      mimetype: 'image/jpeg',
+      caption: 'Pizzas , hamburguesas, empanadas, milanesas con fritas',
+      fileSha256: [Uint8Array],
+      fileLength: [Long],
+      height: 1134,
+      width: 1134,
+      mediaKey: [Uint8Array],
+      fileEncSha256: [Uint8Array],
+      directPath: '/v/t62.7118-24/34617411_1354720278837915_1851859295348396505_n.enc?ccb=11-4&oh=01_Q5AaICI5Czze0WARbqcm0zQhhbAjoCMdbH1lWQeQmWD1uXzE&oe=671969AD&_nc_sid=5e03e0',
+      mediaKeyTimestamp: [Long],
+      jpegThumbnail: [Uint8Array],
       contextInfo: [ContextInfo],
-      inviteLinkGroupTypeV2: 0
+      scansSidecar: [Uint8Array],
+      midQualityFileSha256: [Uint8Array]
     },
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2
-    }
+    messageContextInfo: MessageContextInfo { messageSecret: [Uint8Array] }
   },
-  body: 'Holissss \n' +
-    'Mañana si andan por acá hay ropa. Saqué de mi ropero todo lo que no uso 🤭',
-  from: '5492345681209'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5492345426549@s.whatsapp.net',
-    fromMe: false,
-    id: 'DB42D74DCC8ADC0BEA99487DD99D939A',
-    participant: undefined
-  },
-  messageTimestamp: 1726960690,
-  pushName: 'Papo',
-  broadcast: false,
-  message: Message {
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2
-    },
-    reactionMessage: ReactionMessage {
-      key: [MessageKey],
-      text: '❤️',
-      senderTimestampMs: [Long]
-    }
-  },
-  body: '',
-  from: '5492345426549'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5492345681209@s.whatsapp.net',
-    fromMe: false,
-    id: '35688F3FDB7EE01D12495264E2E24C85',
-    participant: undefined
-  },
-  messageTimestamp: 1726960694,
-  pushName: 'Regina',
-  broadcast: false,
-  message: Message {
-    conversation: 'Mi madre',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2
-    }
-  },
-  body: 'Mi madre',
-  from: '5492345681209'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
-    fromMe: false,
-    id: '8329D5F6CFA259121E647CE54CCB0769',
-    participant: undefined
-  },
-  messageTimestamp: 1726961346,
-  pushName: 'Daniel',
-  broadcast: false,
-  message: Message {
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2
-    },
-    reactionMessage: ReactionMessage {
-      key: [MessageKey],
-      text: '😮',
-      senderTimestampMs: [Long]
-    }
-  },
-  body: '',
-  from: '5491150579753'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
-    fromMe: false,
-    id: '8BCA990A3A3A7376F4787C957199302D',
-    participant: undefined
-  },
-  messageTimestamp: 1726961719,
-  pushName: 'Daniel',
-  broadcast: false,
-  message: Message {
-    conversation: 'Jajajaja',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  status: 4,
-  body: 'Jajajaja',
-  from: '5491150579753'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
-    fromMe: false,
-    id: '7D4FBB60BC981CD48DD42355DCBE503B',
-    participant: undefined
-  },
-  messageTimestamp: 1726961726,
-  pushName: 'Daniel',
-  broadcast: false,
-  message: Message {
-    conversation: 'Agarra el celu de vale',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'Agarra el celu de vale',
-  from: '5491150579753'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
-    fromMe: false,
-    id: '5AFEB3BF1027FF49425F7F954FDBEFA3',
-    participant: undefined
-  },
-  messageTimestamp: 1726961729,
-  pushName: 'Daniel',
-  broadcast: false,
-  message: Message {
-    conversation: 'XD',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  status: 4,
-  body: 'XD',
-  from: '5491150579753'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
-    fromMe: false,
-    id: 'E398575BB2321580B5D0E73899D563B8',
-    participant: undefined
-  },
-  messageTimestamp: 1726961773,
-  pushName: 'Daniel',
-  broadcast: false,
-  message: Message {
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2
-    },
-    reactionMessage: ReactionMessage {
-      key: [MessageKey],
-      text: '😮',
-      senderTimestampMs: [Long]
-    }
-  },
-  body: '',
-  from: '5491150579753'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
-    fromMe: false,
-    id: 'F5A7D748BBAC7F6BC97E2A2B396F0BD0',
-    participant: undefined
-  },
-  messageTimestamp: 1726961817,
-  pushName: 'Daniel',
-  broadcast: false,
-  message: Message {
-    extendedTextMessage: ExtendedTextMessage {
-      text: 'Muy sábado día de la primavera...',
-      previewType: 0,
-      contextInfo: [ContextInfo],
-      inviteLinkGroupTypeV2: 0
-    },
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'Muy sábado día de la primavera...',
-  from: '5491150579753'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
-    fromMe: false,
-    id: 'E05BCCBFE686DEFBB92787B65B7F9A40',
-    participant: undefined
-  },
-  messageTimestamp: 1726961834,
-  pushName: 'Daniel',
-  broadcast: false,
-  message: Message {
-    conversation: 'Mañana entro a las 12 al trabajo',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'Mañana entro a las 12 al trabajo',
-  from: '5491150579753'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
-    fromMe: false,
-    id: 'FFB124AE2319BA2FE90F54414BFB94D5',
-    participant: undefined
-  },
-  messageTimestamp: 1726961848,
-  pushName: 'Daniel',
-  broadcast: false,
-  message: Message {
-    conversation: 'Y quizá no vuelva a casa XD',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'Y quizá no vuelva a casa XD',
-  from: '5491150579753'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
-    fromMe: false,
-    id: '363B7FFEB90DCE56DBB4A8BB5C0AE629',
-    participant: undefined
-  },
-  messageTimestamp: 1726962432,
-  pushName: 'Daniel',
-  broadcast: false,
-  message: Message {
-    conversation: "Don't worry",
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: "Don't worry",
-  from: '5491150579753'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
-    fromMe: false,
-    id: 'A740203A2376A77DA7C3086290B42774',
-    participant: undefined
-  },
-  messageTimestamp: 1726962445,
-  pushName: 'Daniel',
-  broadcast: false,
-  message: Message {
-    conversation: 'Seguro luego te dan bola',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'Seguro luego te dan bola',
-  from: '5491150579753'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
-    fromMe: false,
-    id: 'DE56D8A38062B099540392EA42A77FC7',
-    participant: undefined
-  },
-  messageTimestamp: 1726962460,
-  pushName: 'Daniel',
-  broadcast: false,
-  message: Message {
-    conversation: 'Es temprano para ser sábado',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'Es temprano para ser sábado',
-  from: '5491150579753'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
-    fromMe: false,
-    id: 'A3DD280F585D9DDE9AD3803966C6D0E4',
-    participant: undefined
-  },
-  messageTimestamp: 1726963173,
-  pushName: 'Daniel',
-  broadcast: false,
-  message: Message {
-    conversation: 'Mmm okey',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'Mmm okey',
-  from: '5491150579753'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5492345681209@s.whatsapp.net',
-    fromMe: false,
-    id: '2F5D7287C6891282628931DE27CFB83C',
-    participant: undefined
-  },
-  messageTimestamp: 1726963207,
-  pushName: 'Regina',
-  broadcast: false,
-  message: Message {
-    conversation: 'Queres fumar un puchero?',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2
-    }
-  },
-  body: 'Queres fumar un puchero?',
-  from: '5492345681209'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5492345681209@s.whatsapp.net',
-    fromMe: false,
-    id: 'F480E399303B0CE2BCE6CC16A537C956',
-    participant: undefined
-  },
-  messageTimestamp: 1726963212,
-  pushName: 'Regina',
-  broadcast: false,
-  message: Message {
-    conversation: 'Puchito',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2
-    }
-  },
-  body: 'Puchito',
-  from: '5492345681209'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491150579753@s.whatsapp.net',
-    fromMe: false,
-    id: '75846A3A057D81004EFB2BED58CDB309',
-    participant: undefined
-  },
-  messageTimestamp: 1726963243,
-  pushName: 'Daniel',
-  broadcast: false,
-  message: Message {
-    conversation: 'Bueno bueno.',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'Bueno bueno.',
-  from: '5491150579753'
+  body: '_event_media__1250c013-668c-4237-bdd3-703a33acf120',
+  from: '1727138372@broadcast'
 }

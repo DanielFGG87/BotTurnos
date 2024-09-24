@@ -12,11 +12,42 @@ function horarioActual() {
     const currentDay = currentDate.getDay(); // Día de la semana (0 es domingo, 6 es sábado)
 
     // Definimos que el horario de atención es de lunes a viernes, de 8:00 a 18:00
-    if (currentDay >= 1 && currentDay <= 6 && currentHour >= 1 && currentHour < 23) {
+    if (currentDay >= 0 && currentDay <= 6 && currentHour >= 1 && currentHour < 23) {
         return true; // Dentro del horario de atención
     }
     return false; // Fuera del horario de atención
 }
+
+// PEDIDO DE DATOS
+
+async function pedirDatosUsuario(flowDynamic) {
+    const datos = {};
+
+    // Pedir el nombre
+    await flowDynamic('Por favor, ingresa tu nombre:', { capture: true }, async (message) => {
+        datos.nombre = message.body;
+    });
+
+    // Pedir la edad
+    await flowDynamic('Gracias, ahora ingresa tu edad:', { capture: true }, async (message) => {
+        datos.edad = message.body;
+    });
+
+    // Pedir el correo
+    await flowDynamic('Ahora ingresa tu correo electrónico:', { capture: true }, async (message) => {
+        datos.correo = message.body;
+    });
+
+    // Mostrar los datos capturados
+    await flowDynamic(`Datos ingresados:
+    - Nombre: ${datos.nombre}
+    - Edad: ${datos.edad}
+    - Correo: ${datos.correo}`);
+
+    // Retorna los datos si necesitas procesarlos después
+    return datos;
+}
+
 
 // MENSAJES
 
@@ -55,6 +86,7 @@ function mensage4() {
    Localidad:\n
    *Obra social (recuerde que los pacientes de PAMI deben dirigirse a la agencia de PAMI para consultar convenio o puede también hacerlo telefónicamente a nuestras líneas fijas)*\n
     Y luego aguarde mientras gestionamos su turno, recibirá un mensaje con la confirmación del mismo`]}
+
     
 // ######
 // Especialidades Medicas
@@ -285,7 +317,7 @@ const flowHematologia = addKeyword(['9', 'hematologia']).addAnswer(['Por favor s
 ])
 
 
-// NEUROLOGIA
+// NEUROCIRUGIA
 
 const flowDrGomez = addKeyword(['1','gomez']).addAnswer([
     mensage3()])
@@ -296,7 +328,7 @@ const flowDrGuerra = addKeyword(['2','gurra']).addAnswer([
 const flowDrCondori = addKeyword(['3','condori']).addAnswer([
     mensage3()])
 
-const flowNeurologia = addKeyword(['10','neurologia']).addAnswer(['Por favor selecione el medico'])
+const flowNeurocirugia = addKeyword(['10','neurocirugia']).addAnswer(['Por favor selecione el medico'])
     .addAnswer([
         '*1*.- Dra. Gomez',
         '*2*.- Dra. Guerra',
@@ -586,25 +618,28 @@ const flowVacunacion = addKeyword(['24', 'vacunacion']).addAnswer(['Horario de a
 const flowPsicologia = addKeyword(['27', 'psicologia']).addAnswer([mensage3()])
 
 
+// NEUROLOGIA
 
-// ######
+const flowDraAyarza = addKeyword(['1','ayarza']).addAnswer([mensage3()])
 
-
-/*const flowDocs = addKeyword(['doc', 'documentacion', 'documentación']).addAnswer(
-    [
-        '📄 Aquí encontras las documentación recuerda que puedes mejorarla',
-        'https://bot-whatsapp.netlify.app/',
-        '\n*2* Para siguiente paso.',
-    ],
+const flowNeurologia = addKeyword(['28', 'neurologia']).addAnswer(['Por favor selecione el medico'])
+.addAnswer([
+    '*1*.- Dra. Ayarza Ana'],
     null,
     null,
-    [flowSecundario]
-)
-*/
+    [flowDraAyarza])
+
+
+
+
+
+
 
 
 // #######
+
 // ESPECIALIDADES
+
 // #######
 
 
@@ -620,7 +655,7 @@ const flowConsultorio = addKeyword(['1','consultorio','medico'])
         '*7.-* Gastroenterologia',
         '*8.-* Ginecologia',
         '*9.-* Hematologia',
-        '*10.-* Neurologia',
+        '*10.-* Neurocirugia',
         '*11.-* Oftalmologia',
         '*12.-* Oncologia',
         '*13.-* Psiquiatria',
@@ -637,11 +672,12 @@ const flowConsultorio = addKeyword(['1','consultorio','medico'])
         '*24.-* Vacunacion',
         '*25.-* Kinesiologia',
         '*26.-* Terapia ocupacional',
-        '*27.-* Psicologia'
+        '*27.-* Psicologia',
+        '*28.-* Neurologia'
     ],
     null,
     null,
-    [flowPsicologia, flowTerapiaOcu, flowKinesiologia, flowVacunacion, flowNeumologia, flowObstreticia, flowOtorrino, flowNefrologia, flowNutricion, flowOdontologia, flowFisiatria, flowOftalmologia, flowOncologia, flowPsiquiatria, flowTraumatologia, flowPediatria, flowUrologia, flowFonoaudiologia, flowGastroenterologia, flowGinecologia, flowHematologia, flowNeurologia, flowCardiologia, flowClinicaMed, flowCirugia, flowDermatologia, flowEndocrinologia]
+    [flowNeurologia, flowPsicologia, flowTerapiaOcu, flowKinesiologia, flowVacunacion, flowNeumologia, flowObstreticia, flowOtorrino, flowNefrologia, flowNutricion, flowOdontologia, flowFisiatria, flowOftalmologia, flowOncologia, flowPsiquiatria, flowTraumatologia, flowPediatria, flowUrologia, flowFonoaudiologia, flowGastroenterologia, flowGinecologia, flowHematologia, flowNeurocirugia, flowCardiologia, flowClinicaMed, flowCirugia, flowDermatologia, flowEndocrinologia]
     )
 
 // ######
@@ -849,15 +885,21 @@ const flowModificarCancelarT = addKeyword(['2','modificacion'])
 // #####
 
 const flowConfirmacion = addKeyword(['3','confirmacion'])
-    .addAnswer([
+    /*.addAnswer([
     'Indique los siguientes datos para poder confirmar su turno',
     'Apellido y nombre:',
     'DNI:',
     'Fecha de nacimiento:',
     'Localidad:',
     'Obra social:',
-    'Turno que tenía otorgado (Médico/Especialidad, día que tiene el turno asignado'])
-  
+    'Turno que tenía otorgado (Médico/Especialidad, día que tiene el turno asignado'])*/
+    .addAnswer('Has seleccionado al Médico 1. Por favor, ingresa tu nombre:', { capture: true }, async (message, { flowDynamic }) => {
+        const nombre = message.body;
+        console.log('Nombre ingresado:', nombre); // Verificar si se captura el nombre
+        await flowDynamic(`Gracias, ${nombre}.`);
+    });
+
+
 
 // #####
 // CONSULTAS
@@ -872,9 +914,10 @@ const flowConsultas = addKeyword(['4','consultas'])
         'De lunes a viernes (días hábiles) en horario de 7:00 a 17:00 hs'])
 
 
+
+
+
 // MENU INICIAL 
-
-
 
 
 const flowHorarioAtencion = addKeyword(['repollo'])
