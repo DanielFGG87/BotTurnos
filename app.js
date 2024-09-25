@@ -595,7 +595,7 @@ const flowKinesiologia = addKeyword(['25', 'kinesiologia']).addAnswer([mensage4(
 
 // TERAPIA OCUPACIONAL
 
-    const flowTerapiaOcu = addKeyword(['26', 'terapia']).addAnswer([mensage4()])
+    const flowTerapiaOcu = addKeyword(['26', 'terapia']).addAnswer([mensage3()])
     //.addAnswer([
         //'Medico 1',
         //'Medico 2',
@@ -885,19 +885,19 @@ const flowModificarCancelarT = addKeyword(['2','modificacion'])
 // #####
 
 const flowConfirmacion = addKeyword(['3','confirmacion'])
-    /*.addAnswer([
+    .addAnswer([
     'Indique los siguientes datos para poder confirmar su turno',
     'Apellido y nombre:',
     'DNI:',
     'Fecha de nacimiento:',
     'Localidad:',
     'Obra social:',
-    'Turno que tenía otorgado (Médico/Especialidad, día que tiene el turno asignado'])*/
-    .addAnswer('Has seleccionado al Médico 1. Por favor, ingresa tu nombre:', { capture: true }, async (message, { flowDynamic }) => {
+    'Turno que tenía otorgado (Médico/Especialidad, día que tiene el turno asignado'])
+    /*.addAnswer('Has seleccionado al Médico 1. Por favor, ingresa tu nombre:', { capture: true }, async (message, { flowDynamic }) => {
         const nombre = message.body;
         console.log('Nombre ingresado:', nombre); // Verificar si se captura el nombre
         await flowDynamic(`Gracias, ${nombre}.`);
-    });
+    });*/
 
 
 
