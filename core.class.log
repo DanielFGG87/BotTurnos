@@ -2,154 +2,36 @@
   key: {
     remoteJid: '5492345662340@s.whatsapp.net',
     fromMe: false,
-    id: '4B3BCC8C672072CF5182FE78B7B697A0',
+    id: 'D40C5A8488D93C8E9A958DEF4FF97736',
     participant: undefined
   },
-  messageTimestamp: 1727225537,
+  messageTimestamp: 1727296262,
   pushName: 'Estefania Danciul',
   broadcast: false,
   message: Message {
-    conversation: 'Buenísimo Danito',
+    videoMessage: VideoMessage {
+      interactiveAnnotations: [],
+      url: 'https://mmg.whatsapp.net/v/t62.7161-24/24325883_1197280388148335_5956533116011581538_n.enc?ccb=11-4&oh=01_Q5AaIDvGI4R_cYN6tughVPHdx_oySzDA59lAszPyDI5nlG7g&oe=671BE6EC&_nc_sid=5e03e0&mms3=true',
+      mimetype: 'video/mp4',
+      fileSha256: [Uint8Array],
+      fileLength: [Long],
+      seconds: 9,
+      mediaKey: [Uint8Array],
+      height: 850,
+      width: 474,
+      fileEncSha256: [Uint8Array],
+      directPath: '/v/t62.7161-24/24325883_1197280388148335_5956533116011581538_n.enc?ccb=11-4&oh=01_Q5AaIDvGI4R_cYN6tughVPHdx_oySzDA59lAszPyDI5nlG7g&oe=671BE6EC&_nc_sid=5e03e0',
+      mediaKeyTimestamp: [Long],
+      jpegThumbnail: [Uint8Array],
+      streamingSidecar: [Uint8Array]
+    },
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: 'Buenísimo Danito',
+  status: 4,
+  body: '_event_media__305a4e2d-3ed1-4705-a351-59243b9cda66',
   from: '5492345662340'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5492345662340@s.whatsapp.net',
-    fromMe: false,
-    id: 'EC8F9400764BC65CC687B41A3DE7E19F',
-    participant: undefined
-  },
-  messageTimestamp: 1727225540,
-  pushName: 'Estefania Danciul',
-  broadcast: false,
-  message: Message {
-    conversation: 'Descansa',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'Descansa',
-  from: '5492345662340'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5492345662340@s.whatsapp.net',
-    fromMe: false,
-    id: '1B1EC59B7A219F2D25D0BFA8440BCCE1',
-    participant: undefined
-  },
-  messageTimestamp: 1727225544,
-  pushName: 'Estefania Danciul',
-  broadcast: false,
-  message: Message {
-    conversation: 'Te quiero mucho',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2,
-      messageSecret: [Uint8Array]
-    }
-  },
-  body: 'Te quiero mucho',
-  from: '5492345662340'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491160563829@s.whatsapp.net',
-    fromMe: false,
-    id: '20659661CBF9BB125554A95A741CB1C4',
-    participant: undefined
-  },
-  messageTimestamp: 1727227874,
-  pushName: 'Marr',
-  broadcast: false,
-  message: Message {
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2
-    },
-    reactionMessage: ReactionMessage {
-      key: [MessageKey],
-      text: '😂',
-      senderTimestampMs: [Long]
-    }
-  },
-  body: '',
-  from: '5491160563829'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491160563829@s.whatsapp.net',
-    fromMe: false,
-    id: 'CC76D174D415C51AE8CE393B08C71145',
-    participant: undefined
-  },
-  messageTimestamp: 1727227880,
-  pushName: 'Marr',
-  broadcast: false,
-  message: Message {
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2
-    },
-    reactionMessage: ReactionMessage {
-      key: [MessageKey],
-      text: '🤗',
-      senderTimestampMs: [Long]
-    }
-  },
-  body: '',
-  from: '5491160563829'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491121848449@s.whatsapp.net',
-    fromMe: false,
-    id: '173519E6A4EF0B6C7782D052D0C3FB19',
-    participant: undefined
-  },
-  messageTimestamp: 1727233642,
-  pushName: 'Laura',
-  broadcast: false,
-  message: Message {
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2
-    },
-    reactionMessage: ReactionMessage {
-      key: [MessageKey],
-      text: '😂',
-      senderTimestampMs: [Long]
-    }
-  },
-  body: '',
-  from: '5491121848449'
-}
-[handleMsg]:  {
-  key: {
-    remoteJid: '5491121848449@s.whatsapp.net',
-    fromMe: false,
-    id: 'D87E9EDC0C66F6D9F08A22BDD8573145',
-    participant: undefined
-  },
-  messageTimestamp: 1727233659,
-  pushName: 'Laura',
-  broadcast: false,
-  message: Message {
-    conversation: 'El chusmerio del bingo😆',
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2
-    }
-  },
-  body: 'El chusmerio del bingo😆',
-  from: '5491121848449'
 }

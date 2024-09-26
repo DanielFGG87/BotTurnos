@@ -1,0 +1,16 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "app.js",   // Cambia a 'app.js' si es tu archivo principal
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "app.js"   // Cambia a 'app.js' si es tu archivo principal
+      }
+    ]
+  }
+  
