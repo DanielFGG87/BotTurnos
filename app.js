@@ -1,4 +1,5 @@
-const { createBot, createProvider, createFlow, addKeyword, addAnswer } = require('@bot-whatsapp/bot')
+const { createBot, createProvider, createFlow, addKeyword, addAnswer, addAction, EVENT } = require('@bot-whatsapp/bot')
+
 
 const QRPortalWeb = require('@bot-whatsapp/portal')
 const BaileysProvider = require('@bot-whatsapp/provider/baileys')
@@ -12,7 +13,7 @@ function horarioActual() {
     const currentDay = currentDate.getDay(); // Día de la semana (0 es domingo, 6 es sábado)
 
     // Definimos que el horario de atención es de lunes a viernes, de 8:00 a 18:00
-    if (currentDay >= 0 && currentDay <= 6 && currentHour >= 1 && currentHour < 23) {
+    if (currentDay >= 1 && currentDay <= 5 && currentHour >= 7 && currentHour < 10) {
         return true; // Dentro del horario de atención
     }
     return false; // Fuera del horario de atención
@@ -20,33 +21,9 @@ function horarioActual() {
 
 // PEDIDO DE DATOS
 
-async function pedirDatosUsuario(flowDynamic) {
-    const datos = {};
 
-    // Pedir el nombre
-    await flowDynamic('Por favor, ingresa tu nombre:', { capture: true }, async (message) => {
-        datos.nombre = message.body;
-    });
 
-    // Pedir la edad
-    await flowDynamic('Gracias, ahora ingresa tu edad:', { capture: true }, async (message) => {
-        datos.edad = message.body;
-    });
 
-    // Pedir el correo
-    await flowDynamic('Ahora ingresa tu correo electrónico:', { capture: true }, async (message) => {
-        datos.correo = message.body;
-    });
-
-    // Mostrar los datos capturados
-    await flowDynamic(`Datos ingresados:
-    - Nombre: ${datos.nombre}
-    - Edad: ${datos.edad}
-    - Correo: ${datos.correo}`);
-
-    // Retorna los datos si necesitas procesarlos después
-    return datos;
-}
 
 
 // MENSAJES
@@ -87,10 +64,29 @@ function mensage4() {
    *Obra social (recuerde que los pacientes de PAMI deben dirigirse a la agencia de PAMI para consultar convenio o puede también hacerlo telefónicamente a nuestras líneas fijas)*\n
     Y luego aguarde mientras gestionamos su turno, recibirá un mensaje con la confirmación del mismo`]}
 
-    
+function mensage5() {
+    return [`Enviar foto de la orden de indicación\n
+    Apellido y Nombre:\n
+    DNI:\n
+    Fecha de Nacimiento:\n
+    Localidad:\n
+    Obra social:\n
+    Y luego aguarde mientras gestionamos su turno, recibirá un mensaje con la confirmación del mismo`]}    
+
+
+// ROTORNO AL MENU INICIAL
+
+const flowRetorno = addKeyword('0', {sensitive: true}).addAnswer(['_Volviendo al menu inicial.._'])
+.addAction(
+    async (ctx, { gotoFlow }) => {
+    // Ir automáticamente al siguiente flujo (flow2)
+   return gotoFlow(flowHorarioAtencion);
+   })
+
 // ######
 // Especialidades Medicas
 // ######
+
 
 
 // CARDIOLOGIA
@@ -107,34 +103,36 @@ const flowDrGarcia = addKeyword(['3','garcia']).addAnswer([
     mensage()
 ])
 
-const flowCardiologia = addKeyword(['1', 'cardiologia']).addAnswer(['Por favor selecione el medico'])
+const flowCardiologia = addKeyword(['1', 'cardiologia']).addAnswer(['Por favor selecione el medico.'])
     .addAnswer([
+        '*0*.- Retornar al menu inicial',
         '*1*.- Dr.Bilbao',
         '*2*.- Dr. Almada',
-        '*3*.- Dr. Garcia'],
+        '*3*.- Dr. Garcia Gadda'],
         null,
         null,
-        [flowDrBilbao, flowDrAlamada, flowDrGarcia
+        [flowRetorno, flowDrBilbao, flowDrAlamada, flowDrGarcia
     ])
 
 // CLINICA MEDICA
 
 const flowDrLopez = addKeyword(['2','lopez']).addAnswer([
-    mensage()
+    mensage3()
 ])
 
 const flowDrRegina = addKeyword(['1','regina']).addAnswer([
-    mensage()
+    mensage3()
     ])
 
-const flowClinicaMed = addKeyword(['2', 'clinica']).addAnswer(['Por favor selecione el medico'])
+const flowClinicaMed = addKeyword(['2', 'clinica']).addAnswer(['Por favor selecione el medico.'])
     .addAnswer([
+        '*0*.- Retornar al menu inicial',
         '*1*.- Dr. La Regina',
         '*2*.- Dra. Lopez',
     ],
     null,
     null,
-    [flowDrRegina, flowDrLopez]
+    [flowRetorno, flowDrRegina, flowDrLopez]
     )
 
 // CIRUGIA
@@ -160,8 +158,9 @@ const flowDrMichelis = addKeyword(['michelis','6']).addAnswer([
 const flowDrMiranda = addKeyword(['miranda','7']).addAnswer([
     mensage()])
 
-const flowCirugiaIntervencion = addKeyword(['2', 'no']).addAnswer(['Por favor selecione el medico'])
+const flowCirugiaIntervencion = addKeyword(['2', 'no']).addAnswer(['Por favor selecione el medico.'])
     .addAnswer([
+        '*0*.- Retornar al menu inicial',
         '*1*.- Dr. Negro',
         '*2*.- Dr. Wallace',
         '*3*.- Dra. Lopez',
@@ -172,20 +171,20 @@ const flowCirugiaIntervencion = addKeyword(['2', 'no']).addAnswer(['Por favor se
     ],
     null,
     null,
-    [flowDrNegro, flowDrWallace, flowDrLopezC, flowDrArmendariz, flowDrBubilllo, flowDrMichelis, flowDrMiranda]
-    )
+    [flowRetorno, flowDrNegro, flowDrWallace, flowDrLopezC, flowDrArmendariz, flowDrBubilllo, flowDrMichelis, flowDrMiranda])
 
-const flowCirugiaCuracion = addKeyword(['1','si','curacion']).addAnswer([mensage2()])
+const flowCirugiaCuracion = addKeyword(['1','si','curacion']).addAnswer([mensage()])
 
     
 const flowCirugia = addKeyword(['3', 'cirugia']).addAnswer(['¿Desea turno para curaciones o retirar puntos?'])
-           .addAnswer([
-           ' ',
-            '*1*.- SI',
-            '*2*.- NO'],
-          null,
-          null,
-          [flowCirugiaCuracion, flowCirugiaIntervencion])
+    .addAnswer([
+    ' ',
+    '*0*.- Retornar al menu inicial',
+    '*1*.- SI',
+    '*2*.- NO'],
+    null,
+    null,
+    [flowRetorno, flowCirugiaCuracion, flowCirugiaIntervencion])
     
 
 // DERMATOLOGIA
@@ -193,12 +192,13 @@ const flowCirugia = addKeyword(['3', 'cirugia']).addAnswer(['¿Desea turno para 
 const flowDrPierini = addKeyword(['pierini','1']).addAnswer([
     mensage()])
 
-const flowDermatologia = addKeyword(['4', 'dermatologia']).addAnswer(['Por favor selecione el medico'])
+const flowDermatologia = addKeyword(['4', 'dermatologia']).addAnswer(['Por favor selecione el medico.'])
     .addAnswer([
+        '*0*.- Retornar al menu inicial',
         '*1*.- Dra. Pierini'],
         null,
         null,
-    [flowDrPierini])
+    [flowRetorno, flowDrPierini])
 
 // ENDOCRINOLOGIA
 
@@ -207,13 +207,14 @@ const flowDrFeretta = addKeyword(['feretta','1']).addAnswer([
 
 const flowEndocrinologia = addKeyword(['5', 'endocrinologia']).addAnswer(['Por favor selecione el medico'])
     .addAnswer([
+        '*0*.- Retornar al menu inicial',
         '*1*.- Dra. Feretta',
    //     'Medico 2',
    //     'Medico 3'
     ],
     null,
     null,
-    [flowDrFeretta])
+    [flowRetorno, flowDrFeretta])
 
 // FONOUDIOLOGIA
 
@@ -221,26 +222,34 @@ const flowTratamientoL = addKeyword(['tratamiento','1']).addAnswer([
     mensage4()])
 
 const flowOEA = addKeyword(['oea','2']).addAnswer([
-    'Por favor, ingrese los siguientes datos:',
-    'Apellido y nombre',
-    'DNI',
-    'Fecha de nacimiento',
-    'Localidad',
-    '*Obra social (recuerde que los pacientes de PAMI deberán presentar la Orden medica digital y la credencial actualizada)*'
+    'Por favor, ingrese los siguientes datos del paciente y del familiar a cargo:',
+    '',
+    'Apellido y nombre:',
+    '',
+    'DNI:',
+    '',
+    'Fecha de nacimiento:',
+    '',
+    'Localidad:',
+    '',
+    'Obra social:',
+    '',
+    '*(recuerde que el día de la atención, deberá concurrir con la libreta sanitaria)*'
 ])
 
 const flowEstudiosA = addKeyword(['estudios','3']).addAnswer([
     mensage4()])
 
 
-const flowFonoaudiologia = addKeyword(['6', 'fonoaudiologia']).addAnswer(['Por favor selecione el estudio'])
+const flowFonoaudiologia = addKeyword(['6', 'fonoaudiologia']).addAnswer(['Por favor selecione el estudio.'])
     .addAnswer([
+        '*0*.- Retornar al menu inicial',
         '*1*.- Tratamiento del Lenguaje',
         '*2*.- OEA',
         '*3*.- Estudios Audiologicos'],
         null,
         null,
-    [flowTratamientoL, flowOEA, flowEstudiosA])
+    [flowRetorno, flowTratamientoL, flowOEA, flowEstudiosA])
 
 // GASTROENTEROLOGIA
 
@@ -256,15 +265,16 @@ const flowDrLucia = addKeyword(['3','lucia']).addAnswer([
 const flowDrFacciutto = addKeyword(['4','facciutto']).addAnswer([
     mensage()])
 
-const flowGastroenterologia = addKeyword(['7', 'gastro']).addAnswer(['Por favor selecione el medico'])
+const flowGastroenterologia = addKeyword(['7', 'gastro']).addAnswer(['Por favor selecione el medico.'])
     .addAnswer([
+        '*0*.- Retornar al menu inicial',
         '*1*.- Dr. Del Negro',
         '*2*.- Dr. Wallace',
         '*3*.- Dr. De Lucia',
         '*4*.- Dr. Facciutto'],
         null,
         null,
-        [flowDrDelNegro, flowDrWallaceG, flowDrLucia, flowDrFacciutto])
+        [flowRetorno, flowDrDelNegro, flowDrWallaceG, flowDrLucia, flowDrFacciutto])
 
 // GINECOLOGIA
 
@@ -286,8 +296,9 @@ const flowDrPiyero = addKeyword(['5','piyero']).addAnswer([
 const flowDrArciprete = addKeyword(['6','arciprete']).addAnswer([
     mensage()])
 
-const flowGinecologia = addKeyword(['8','ginecologia']).addAnswer(['Por favor selecione el medico'])
+const flowGinecologia = addKeyword(['8','ginecologia']).addAnswer(['Por favor selecione el medico.'])
     .addAnswer([
+        '*0*.- Retornar al menu inicial',
         '*1*.- Dra. Grimoldi',
         '*2*.- Dr. Estevez',
         '*3*.- Dra. Levitan',
@@ -296,7 +307,7 @@ const flowGinecologia = addKeyword(['8','ginecologia']).addAnswer(['Por favor se
         '*6*.- Dr. Arciprete'],
         null,
         null,
-        [flowDrGrimoldi, flowDrEstevez, flowDrLevitan, flowDrMartinez, flowDrPiyero, flowDrArciprete
+        [flowRetorno, flowDrGrimoldi, flowDrEstevez, flowDrLevitan, flowDrMartinez, flowDrPiyero, flowDrArciprete
 
 ])
 
@@ -305,15 +316,16 @@ const flowGinecologia = addKeyword(['8','ginecologia']).addAnswer(['Por favor se
 const flowDrBarbieris = addKeyword(['1','barbieris']).addAnswer([
     mensage()])
 
-const flowHematologia = addKeyword(['9', 'hematologia']).addAnswer(['Por favor selecione el medico'])
+const flowHematologia = addKeyword(['9', 'hematologia']).addAnswer(['Por favor selecione el medico.'])
     .addAnswer([
+        '*0*.- Retornar al menu inicial',
         '*1*.- Dra. Barbieris',
         //'Medico 2',
         //'Medico 3'
     ],
     null,
     null,
-    [flowDrBarbieris
+    [flowRetorno, flowDrBarbieris
 ])
 
 
@@ -328,14 +340,15 @@ const flowDrGuerra = addKeyword(['2','gurra']).addAnswer([
 const flowDrCondori = addKeyword(['3','condori']).addAnswer([
     mensage3()])
 
-const flowNeurocirugia = addKeyword(['10','neurocirugia']).addAnswer(['Por favor selecione el medico'])
+const flowNeurocirugia = addKeyword(['10','neurocirugia']).addAnswer(['Por favor selecione el medico.'])
     .addAnswer([
+        '*0*.- Retornar al menu inicial',
         '*1*.- Dra. Gomez',
         '*2*.- Dra. Guerra',
         '*3*.- Dr Condori'],
         null,
         null,
-        [flowDrGomez, flowDrGuerra, flowDrCondori])
+        [flowRetorno, flowDrGomez, flowDrGuerra, flowDrCondori])
 
 
 // OFTALMOLOGIA
@@ -346,14 +359,15 @@ const flowDrGiustozzi = addKeyword(['1','giustozzi']).addAnswer([
 const flowDrZanovello = addKeyword(['2','zanoveloo']).addAnswer([
     mensage()])
 
-const flowOftalmologia = addKeyword(['11', 'oftalmologia']).addAnswer(['Por favor selecione el medico'])
+const flowOftalmologia = addKeyword(['11', 'oftalmologia']).addAnswer(['Por favor selecione el medico.'])
     .addAnswer([
+        '*0*.- Retornar al menu inicial',
         '*1*.- Dra. Giustozzi',
         '*2*.- Dr Zanovello'],
         //'Medico 3'
         null,
         null,
-        [flowDrGiustozzi, flowDrZanovello])
+        [flowRetorno, flowDrGiustozzi, flowDrZanovello])
 
 
 // ONCOLOGIA
@@ -361,14 +375,15 @@ const flowOftalmologia = addKeyword(['11', 'oftalmologia']).addAnswer(['Por favo
 const flowDrBozzano = addKeyword(['1','bozano']).addAnswer([
     mensage3()])
 
-const flowOncologia = addKeyword(['12', 'oncologia']).addAnswer(['Por favor selecione el medico'])
+const flowOncologia = addKeyword(['12', 'oncologia']).addAnswer(['Por favor selecione el medico.'])
     .addAnswer([
+        '*0*.- Retornar al menu inicial',
         '*1*.- Dr. Bozzano'],
        //'Medico 2',
         //'Medico 3'
         null,
         null,
-        [flowDrBozzano])
+        [flowRetorno, flowDrBozzano])
 
 // PSIQUIATRIA
 
@@ -378,14 +393,15 @@ const flowDrEcheverria = addKeyword(['1','echeverria']).addAnswer([
 const flowDrGiuli = addKeyword(['2','giuli']).addAnswer([
     mensage3()])
 
-const flowPsiquiatria = addKeyword(['13', 'psiquiatria']).addAnswer(['Por favor selecione el medico'])
+const flowPsiquiatria = addKeyword(['13', 'psiquiatria']).addAnswer(['Por favor selecione el medico.'])
     .addAnswer([
+        '*0*.- Retornar al menu inicial',
         '*1*.- Dra. Echeverria',
         '*2*.- Dra. Di Giuli'],
         //'Medico 3'
         null,
         null,
-        [flowDrGiuli, flowDrEcheverria])
+        [flowRetorno, flowDrGiuli, flowDrEcheverria])
 
 // TRAUMATOLOGIA
 
@@ -401,15 +417,16 @@ const flowDrRimmaudo = addKeyword(['3','rimmaudo']).addAnswer([
 const flowDrGallego = addKeyword(['4','gallego']).addAnswer([
     mensage()])
 
-const flowTraumatologia = addKeyword(['14', 'traumatologia']).addAnswer(['Por favor selecione el medico'])
+const flowTraumatologia = addKeyword(['14', 'traumatologia']).addAnswer(['Por favor selecione el medico.'])
     .addAnswer([
+        '*0*.- Retornar al menu inicial',
         '*1*.- Dr. Acuña',
         '*2*.- Dr. Castellani',
         '*3*.- Dr. Rimmaudo',
         '*4*.- Dra. Gallego'],
         null,
         null,
-        [flowDrAcuña, flowDrCastellani, flowDrRimmaudo, flowDrGallego])
+        [flowRetorno, flowDrAcuña, flowDrCastellani, flowDrRimmaudo, flowDrGallego])
 
 
 // PEDIATRIA
@@ -419,17 +436,18 @@ const flowPediatriaSano = addKeyword(['1', 'si']).addAnswer([
     mensage3()
 ])
 
-const flowPediatriaNoSano = addKeyword(['2', 'no']).addAnswer(['*Turno de manera presencial de 8:30 hs a 11:30 hs'])
+const flowPediatriaNoSano = addKeyword(['2', 'no']).addAnswer(['*Turno de manera presencial de 8:30 hs a 11:30 hs.'])
 
 
 const flowPediatria = addKeyword(['15', 'pediatria']).addAnswer(['Por favor selecione si es para un niño/a completamente sano.'])
   .addAnswer([
      ' ',
+     '*0*.- Retornar al menu inicial',
       '*1*.- SI',
       '*2*.- NO'],
     null,
     null,
-    [flowPediatriaSano, flowPediatriaNoSano])
+    [flowRetorno, flowPediatriaSano, flowPediatriaNoSano])
 
 
 // UROLOGIA
@@ -440,14 +458,15 @@ const flowDrGuaragnini = addKeyword(['1','guaragnini']).addAnswer([
 const flowDrMassaccesi = addKeyword(['2','massaccesi']).addAnswer([
     mensage()])
 
-const flowUrologia = addKeyword(['16', 'urologia']).addAnswer(['Por favor selecione el medico'])
+const flowUrologia = addKeyword(['16', 'urologia']).addAnswer(['Por favor selecione el medico.'])
     .addAnswer([
+        '*0*.- Retornar al menu inicial',
         '*1*.- Dr. Guaragnini',
         '*2*.- Dr. Massaccesi'],
         //'Medico 3'
         null,
         null,
-        [flowDrGuaragnini, flowDrMassaccesi])
+        [flowRetorno, flowDrGuaragnini, flowDrMassaccesi])
 
 // NUTRICION
 
@@ -460,14 +479,15 @@ const flowLicDalto = addKeyword(['2','dalto']).addAnswer([
 const flowLicEstevez = addKeyword(['3','estevez']).addAnswer([
             mensage()])
 
-const flowNutricion = addKeyword(['17', 'nutricion']).addAnswer(['Por favor selecione el medico'])
+const flowNutricion = addKeyword(['17', 'nutricion']).addAnswer(['Por favor selecione el medico.'])
     .addAnswer([
+        '*0*.- Retornar al menu inicial',
         '*1*.- Lic. Pompozzi',
         '*2*.- Lic. Dalto',
         '*3*.- Lic. Estevez'],
         null,
         null,
-        [flowLicPompozzi, flowLicDalto, flowLicEstevez])
+        [flowRetorno, flowLicPompozzi, flowLicDalto, flowLicEstevez])
 
 // ODONTOLOGIA
 
@@ -479,21 +499,22 @@ const flowOdonAdultosTarde = addKeyword(['2', 'tarde']).addAnswer([mensage3()])
 
 const flowOdonAdultos = addKeyword(['1', 'adultos']).addAnswer(['Porfavaor selecione el turno:',
     '',
+    '*0*.- Retornar al menu inicial',
     '*1*.- Turno Mañana',
     '*2*.- Turno Tarde'],
     null,
     null,
-    [flowOdonAdulosMañana, flowOdonAdultosTarde])
+    [flowRetorno, flowOdonAdulosMañana, flowOdonAdultosTarde])
 
 
-const flowOdontologia = addKeyword(['18', 'odontologia']).addAnswer(['Por favor selecione una opcion'])
-    .addAnswer([
-        '*1*.- Adultos',
-        '*2*.- Niños'],
-        // 'Medico 3'
-        null,
-        null,
-        [flowOdonAdultos, flowOdonNiños])
+const flowOdontologia = addKeyword(['18', 'odontologia']).addAnswer(['Por favor selecione una opcion:'])
+.addAnswer([
+    '*0*.- Retornar al menu inicial',
+    '*1*.- Adultos',
+    '*2*.- Niños'],
+        // 'Medico 3'        null,
+    null,
+    [flowRetorno, flowOdonAdultos, flowOdonNiños])
 
 
 // FISIATRIA
@@ -501,14 +522,15 @@ const flowOdontologia = addKeyword(['18', 'odontologia']).addAnswer(['Por favor 
 const flowDrArocena = addKeyword(['1','arocena']).addAnswer([
     mensage()])
 
-const flowFisiatria = addKeyword(['19', 'fisiatria']).addAnswer(['Por favor selecione el medico'])
+const flowFisiatria = addKeyword(['19','fisiatria']).addAnswer(['Por favor selecione el medico.'])
     .addAnswer([
+        '*0*.- Retornar al menu inicial',
         '*1*.- Dra. Arocena'],
         //'Medico 2',
         //'Medico 3'
         null,
         null,
-        [flowDrArocena])
+        [flowRetorno, flowDrArocena])
 
 
 // NEUMOLOGIA
@@ -516,13 +538,14 @@ const flowFisiatria = addKeyword(['19', 'fisiatria']).addAnswer(['Por favor sele
 const flowDrSpinelli = addKeyword(['1','arocena']).addAnswer([
     mensage()]) 
 
-const flowNeumologia = addKeyword(['20', 'neumologia']).addAnswer(['Por favor selecione el medico'])
+const flowNeumologia = addKeyword(['20', 'neumologia']).addAnswer(['Por favor selecione el medico.'])
     .addAnswer([
+        '*0*.- Retornar al menu inicial',
         '*1*.- Dra. Spinelli'],
         //'Medico 2'
         null,
         null,
-        [flowDrSpinelli])
+        [flowRetorno, flowDrSpinelli])
 
 
 // OBSTRETICIA
@@ -542,8 +565,9 @@ const flowDrOrtiz = addKeyword(['4','ortiz']).addAnswer([
 const flowDrSerrani = addKeyword(['5','serrani']).addAnswer([
      mensage()])
 
-const flowObstreticia = addKeyword(['21', 'obstreticia']).addAnswer(['Por favor selecione el medico'])
+const flowObstreticia = addKeyword(['21', 'obstreticia']).addAnswer(['Por favor selecione el medico.'])
     .addAnswer([
+        '*0*.- Retornar al menu inicial',
         '*1*.- Arias',
         '*2*.- Lemme',
         '*3*.- Tenaglia',
@@ -551,7 +575,7 @@ const flowObstreticia = addKeyword(['21', 'obstreticia']).addAnswer(['Por favor 
         '*5*.- Serrani'],
         null,
         null,
-        [flowDrArias, flowDrLemme, flowDrOrtiz, flowDrSerrani, flowDrTenaglia])
+        [flowRetorno, flowDrArias, flowDrLemme, flowDrOrtiz, flowDrSerrani, flowDrTenaglia])
 
 
 // OTORRINONARINGOLOGIA
@@ -559,14 +583,15 @@ const flowObstreticia = addKeyword(['21', 'obstreticia']).addAnswer(['Por favor 
 const flowDrMazzei = addKeyword(['1','mazzei']).addAnswer([
     mensage()])
 
-const flowOtorrino = addKeyword(['22', 'otorrino']).addAnswer(['Por favor selecione el medico'])
+const flowOtorrino = addKeyword(['22', 'otorrino']).addAnswer(['Por favor selecione el medico.'])
     .addAnswer([
+        '*0*.- Retornar al menu inicial',
         '*1*.- Dr. Mazzei'],
         //'Medico 2',
         //'Medico 3'
         null,
         null,
-        [flowDrMazzei])
+        [flowRetorno, flowDrMazzei])
 
 
 // NEFROLOGIA
@@ -574,14 +599,15 @@ const flowOtorrino = addKeyword(['22', 'otorrino']).addAnswer(['Por favor seleci
 const flowDrCarriquiri = addKeyword(['1','carriquiri']).addAnswer([
     mensage()])
 
-const flowNefrologia = addKeyword(['23', 'nefrologia']).addAnswer(['Por favor selecione el medico'])
+const flowNefrologia = addKeyword(['23', 'nefrologia']).addAnswer(['Por favor selecione el medico.'])
     .addAnswer([
+        '*0*.- Retornar al menu inicial',
         '*1*.- Dr. Carriquiri'],
         //'Medico 2',
         //'Medico 3'
         null,
         null,
-        [flowDrCarriquiri])
+        [flowRetorno, flowDrCarriquiri])
 
 
 // KINESIOLOGIA
@@ -595,7 +621,7 @@ const flowKinesiologia = addKeyword(['25', 'kinesiologia']).addAnswer([mensage4(
 
 // TERAPIA OCUPACIONAL
 
-    const flowTerapiaOcu = addKeyword(['26', 'terapia']).addAnswer([mensage3()])
+    const flowTerapiaOcu = addKeyword(['26', 'terapia']).addAnswer([mensage5()])
     //.addAnswer([
         //'Medico 1',
         //'Medico 2',
@@ -606,7 +632,8 @@ const flowKinesiologia = addKeyword(['25', 'kinesiologia']).addAnswer([mensage4(
 // VACUNACION
 
 const flowVacunacion = addKeyword(['24', 'vacunacion']).addAnswer(['Horario de atencion de 7:00 hs a 18:00 hs',
-    'Los turnos son a demanda, previamente pasando por ventanilla de *TURNOS*.',
+    'Los turnos son a demanda, previamente pasando por ventanilla de *Sala de Gestión del Usuario*.',
+    '',
     '*Todos los dias se dan todas las vacunas, para FIEBRE AMARILLA debe solicitar turno previo llamando a las lineas fijas intero: 110*'
     //'Medico 2',
     //'Medico 3'
@@ -622,17 +649,20 @@ const flowPsicologia = addKeyword(['27', 'psicologia']).addAnswer([mensage3()])
 
 const flowDraAyarza = addKeyword(['1','ayarza']).addAnswer([mensage3()])
 
-const flowNeurologia = addKeyword(['28', 'neurologia']).addAnswer(['Por favor selecione el medico'])
+const flowNeurologia = addKeyword(['28', 'neurologia']).addAnswer(['Por favor selecione el medico.'])
 .addAnswer([
+    '*0*.- Retornar al menu inicial',
     '*1*.- Dra. Ayarza Ana'],
     null,
     null,
-    [flowDraAyarza])
+    [flowRetorno, flowDraAyarza])
 
 
+// PUERICULTORA
 
-
-
+const flowPuericultora = addKeyword(['29','puericultora']).addAnswer([
+    mensage()
+    ])
 
 
 
@@ -643,9 +673,10 @@ const flowNeurologia = addKeyword(['28', 'neurologia']).addAnswer(['Por favor se
 // #######
 
 
-const flowConsultorio = addKeyword(['1','consultorio','medico'])
-    .addAnswer(['Indicar especialidad requerida',
+const flowConsultorio = addKeyword(['1','consultorio','medico','0'])
+    .addAnswer(['*Indicar especialidad requerida:*',
         ' ',
+        '*0*.- Retornar al menu inicial',
         '*1.-* Cardiologia',
         '*2.-* Clinica Medica',
         '*3.-* Cirugia',
@@ -673,12 +704,14 @@ const flowConsultorio = addKeyword(['1','consultorio','medico'])
         '*25.-* Kinesiologia',
         '*26.-* Terapia ocupacional',
         '*27.-* Psicologia',
-        '*28.-* Neurologia'
+        '*28.-* Neurologia',
+        '*29.-* Puericultora'
     ],
     null,
     null,
-    [flowNeurologia, flowPsicologia, flowTerapiaOcu, flowKinesiologia, flowVacunacion, flowNeumologia, flowObstreticia, flowOtorrino, flowNefrologia, flowNutricion, flowOdontologia, flowFisiatria, flowOftalmologia, flowOncologia, flowPsiquiatria, flowTraumatologia, flowPediatria, flowUrologia, flowFonoaudiologia, flowGastroenterologia, flowGinecologia, flowHematologia, flowNeurocirugia, flowCardiologia, flowClinicaMed, flowCirugia, flowDermatologia, flowEndocrinologia]
+    [flowRetorno, flowPuericultora, flowNeurologia, flowPsicologia, flowTerapiaOcu, flowKinesiologia, flowVacunacion, flowNeumologia, flowObstreticia, flowOtorrino, flowNefrologia, flowNutricion, flowOdontologia, flowFisiatria, flowOftalmologia, flowOncologia, flowPsiquiatria, flowTraumatologia, flowPediatria, flowUrologia, flowFonoaudiologia, flowGastroenterologia, flowGinecologia, flowHematologia, flowNeurocirugia, flowCardiologia, flowClinicaMed, flowCirugia, flowDermatologia, flowEndocrinologia]
     )
+    
 
 // ######
 
@@ -695,58 +728,81 @@ const flowEstGastroenterologicos = addKeyword(['10','Gastroenterologicos'])
 // RAYOS
 
 const flowRayos = addKeyword(['rayos','1'])
-    .addAnswer(['Enviar foto de la orden de indicación',
+    /*.addAnswer(['Enviar foto de la orden de indicación',
+        '',
         'Apellido y nombre:',
-        'DNI:', 
+        '',
+        'DNI:',
+        '',
         'Fecha de nacimiento:',
+        '',
         'Localidad:',
+        '',
         '*Obra social (recuerde que los pacientes de PAMI deberán presentar la Orden medica digital y la credencial actualizada)*',
-        'Y luego aguarde mientras gestionamos su turno, recibirá un mensaje con la confirmación del mismo'
-        ])
-
+        '',
+        '*Presentar radiografia previa de columna, el dia de atención*',
+        '',
+        'Y luego aguarde mientras gestionamos su turno, recibirá un mensaje con la confirmación del mismo',
+        '',
+        '_Recuerde que para radiografía de columna lumbar, lumbosacra o espinograma, debe realizar una dieta liviana 48 hrs antes, evitando consumir lacteos o productos gasificados_'
+        ])*/
+    .addAnswer(['Para solicitar turno de *rayos*, debe concurrir de manera presencial a la ventanilla de Sala de Gestión del Usuario de lunes a viernes (días hábiles) de 12 a 18 hs con la orden física.',
+'Muchas gracias'])
 
 // ESPINOGRAFIA
 
 const flowEspinografia = addKeyword(['2','Espinografia'])
-    .addAnswer(['Enviar foto de la orden de indicación',
+    /*.addAnswer(['Enviar foto de la orden de indicación',
+        '',
         'Apellido y nombre:',
-        'DNI:', 
+        '',
+        'DNI:',
+        '',
         'Fecha de nacimiento:',
+        '',
         'Localidad:',
+        '',
         '*Obra social (recuerde que los pacientes de PAMI deberán presentar la Orden medica digital y la credencial actualizada)*',
-        '*Presentar radiografia previa de columna, el dia de atención',
-        'Y luego aguarde mientras gestionamos su turno, recibirá un mensaje con la confirmación del mismo'
-        ])
-
+        '',
+        '*Presentar radiografia previa de columna, el dia de atención*',
+        '',
+        'Y luego aguarde mientras gestionamos su turno, recibirá un mensaje con la confirmación del mismo',
+        '',
+        '_Recuerde que para radiografía de columna lumbar, lumbosacra o espinograma, debe realizar una dieta liviana 48 hrs antes, evitando consumir lacteos o productos gasificados_'
+       ])*/
+        .addAnswer(['Para solicitar turno de *espinografia*, debe concurrir de manera presencial a la ventanilla de Sala de Gestión del Usuario de lunes a viernes (días hábiles) de 12 a 18 hs con la orden física.',
+            'Muchas gracias'])
 // TOMOGRAFIA
 
 const flowTomografia = addKeyword(['3','Tomografia'])
-    .addAnswer(['Enviar foto de la orden de indicación',
-        'Apellido y nombre:',
-        'DNI:', 
-        'Fecha de nacimiento:',
-        'Localidad:',
-        '*Obra social (recuerde que los pacientes de PAMI deberán presentar la Orden medica digital y la credencial actualizada)*',
-        '*Peso aproximado del paciente*',
-        'Y luego aguarde mientras gestionamos su turno, recibirá un mensaje con la confirmación del mismo'
-        ])
+    .addAnswer(['Para solicitar turno de *tomografía*, debe concurrir de manera presencial a la ventanilla de *Sala de Gestión del Usuario* de lunes a viernes (días hábiles) de 12 a 18 hs con la orden física.',
+        'Muchas gracias'])
 
-// MAGNIFICACIONES
+// MAMOGRAFIA
 
 const flowMamografia = addKeyword(['4','Mamografía'])
-    .addAnswer([mensage4()])
+    .addAnswer(['Para solicitar turno de *mamografía*, debe concurrir de manera presencial a la ventanilla de *Sala de Gestión del Usuario* de lunes a viernes (días hábiles) de 12 a 18 hs con la orden física.',
+        'Muchas gracias'])
 
 // MAGNIFICACIONES
 
 const flowMagnificaciones = addKeyword(['5','Magnificaciones'])
-    .addAnswer(['Enviar foto de la orden de indicación',
+    /*.addAnswer(['Enviar foto de la orden de indicación',
+        '',
         'Apellido y nombre:',
+        '',
         'DNI.', 
+        '',
         'Fecha de nacimiento:',
+        '',
         'Localidad:',
+        '',
         '*Obra social (recuerde que los pacientes de PAMI deberán presentar la Orden medica digital y la credencial actualizada)*',
+        '',
         'Y luego aguarde mientras gestionamos su turno, recibirá un mensaje con la confirmación del mismo'
-         ])
+         ])*/
+        .addAnswer(['Para solicitar turno de *magnificaciones*, debe concurrir de manera presencial a la ventanilla de Sala de Gestión del Usuario de lunes a viernes (días hábiles) de 12 a 18 hs con la orden física.',
+            'Muchas gracias'])
 
 // ECOCARDIOGRAMA
 
@@ -757,11 +813,17 @@ const flowEcocardiograma = addKeyword(['6','Ecocardiograma'])
 
 const flowElectroenfacelograma = addKeyword(['7','Electroencefalograma'])
     .addAnswer(['Enviar foto de la orden de indicación',
+        '',
         'Apellido y nombre:',
-        'DNI:', 
+        '',
+        'DNI:',
+        '',
         'Fecha de nacimiento:',
+        '',
         'Localidad:',
+        '',
         '*Obra social (recuerde que los pacientes de PAMI deberán presentar la Orden medica digital y la credencial actualizada)*',
+        '',
         'Y luego aguarde mientras gestionamos su turno, recibirá un mensaje con la confirmación del mismo'
         ])
 
@@ -769,12 +831,19 @@ const flowElectroenfacelograma = addKeyword(['7','Electroencefalograma'])
 
 const flowDoppler = addKeyword(['8','Doppler'])
     .addAnswer(['Enviar foto de la orden de indicación',
+        '',
         'Apellido y nombre:',
-        'DNI:', 
+        '',
+        'DNI:',
+        '',
         'Fecha de nacimiento:',
+        '',
         'Localidad:',
+        '',
         '*Obra social (recuerde que los pacientes de PAMI deben dirigirse a la agencia de PAMI para consultar convenio o puede también hacerlo telefónicamente a nuestras líneas fijas)*',
+        '',
         '*Recuerde que solo se realizan Doppler de vasos de cuello, cardíaco, obstétrico, venoso de MMII y arterial de MMII*',
+        '',
         'Y luego aguarde mientras gestionamos su turno, recibirá un mensaje con la confirmación del mismo'
         ])
 
@@ -794,18 +863,53 @@ const flowLaboratorio = addKeyword(['11','laboratorio'])
 
 const flowEspirometria = addKeyword(['12','espirometria'])
     .addAnswer(['Enviar foto de la orden de indicación',
+        '',
         'Apellido y nombre:',
+        '',
         'DNI.', 
+        '',
         'Fecha de nacimiento:',
+        '',
         'Localidad:',
+        '',
         '*Obra social (recuerde que los pacientes de PAMI deberán presentar la Orden medica digital y la credencial actualizada)*',
+        '',
         'Y luego aguarde mientras gestionamos su turno, recibirá un mensaje con la confirmación del mismo'
         ])
+
+// ECOGRAFIA
+
+const flowEcografia = addKeyword(['13','ecografia'])
+    .addAnswer(['Para solicitar turno de *ecografía*, debe concurrir de manera presencial a la ventanilla de *Sala de Gestión del Usuario* de lunes a viernes (días hábiles) de 12 a 18 hs con la orden física.',
+        'Muchas gracias'])
+
+        
+// ELECTROCARDIOGRAMA
+
+const flowElectrocardiograma = addKeyword(['14', 'electrocardiograma'])
+        .addAnswer([
+        'Enviar foto de la orden de indicación',
+        '',
+        'Apellido y nombre:',
+        '',
+        'DNI:',
+        '',
+        'Fecha de nacimiento:',
+        '',
+        'Localidad:',
+        '',
+        '*Obra social (recuerde que los pacientes de PAMI deberán presentar la Orden medica digital y la credencial actualizada)*',
+        '',
+        'Y luego aguarde mientras gestionamos su turno, recibirá un mensaje con la confirmación del mismo'
+        ])
+         
 
 // ESTUDIO DE DIAGNOSTICO
 
  const flowEstudioDiag = addKeyword(['2','diagnostico','estudio'])
-        .addAnswer([
+        .addAnswer(['*Idicar el estudios requerido:*',
+            '',
+            '*0*.- Retornar al menu inicial',
             '*1.-* Rayos',
             '*2.-* Espinografia',
             '*3.-* Tomografía',
@@ -817,12 +921,14 @@ const flowEspirometria = addKeyword(['12','espirometria'])
             '*9.-* Estudios Audiologicos', 
             '*10.-* Estudios Gastroenterológicos',
             '*11.-* Laboratorio',
-            '*12.-* Espirometria'
+            '*12.-* Espirometria',
+            '*13.-* Ecografia',
+            '*14.-* Electrocardiograma'
         ],
         null,
         null,
         [
-            flowLaboratorio, flowEstGastroenterologicos, flowEspirometria, flowRayos, flowEspinografia, flowTomografia, flowMamografia, 
+            flowRetorno, flowElectrocardiograma, flowEcografia, flowLaboratorio, flowEstGastroenterologicos, flowEspirometria, flowRayos, flowEspinografia, flowTomografia, flowMamografia, 
             flowMagnificaciones, flowEcocardiograma, flowElectroenfacelograma, 
             flowDoppler, flowEstAudiologicos
         ])
@@ -839,11 +945,12 @@ const flowResTurno = addKeyword(['1','turno']).addAnswer(
         'Aqui podes selecionar el numero al tipo de especialidad a la cual quieres pedir turno, recuerda que debes cumplir ciertos requisitos que estaran informados',
         ' ',
         ' ',
+        '*0*.- Retornar al menu inicial',
         '*1.-* Consultorios Medicos',
         '*2.-* Estudios de Diagnostico'],
     null,
     null,
-    [flowConsultorio, flowEstudioDiag]
+    [flowRetorno, flowConsultorio, flowEstudioDiag]
 )   
 
 // ######
@@ -853,32 +960,45 @@ const flowResTurno = addKeyword(['1','turno']).addAnswer(
 // ######
 
 const flowModificarT = addKeyword(['1','modificar']).addAnswer([
-'Indique los siguientes datos para poder modificar su turno',
+        'Indique los siguientes datos para poder *MODIFICAR* su turno',
+        '',
         'Apellido y nombre:',
+        '',
         'DNI:',
+        '',
         'Fecha de nacimiento:',
+        '',
         'Localidad:',
+        '',
         'Obra social:',
-        'Turno que tenía otorgado (Médico/Especialidad, día que tiene el turno asignado'])
+        '',
+        'Turno que tenía otorgado (Médico/Especialidad, día que tiene el turno asignado)'])
 
- const flowCancelarT = addKeyword(['1','mopdificar']).addAnswer([
-        'Indique los siguientes datos para poder cancelar su turno',
+ const flowCancelarT = addKeyword(['2','cancelar']).addAnswer([
+        'Indique los siguientes datos para poder *CANCELAR* su turno',
+        '',
         'Apellido y nombre:',
+        '',
         'DNI:',
+        '',
         'Fecha de nacimiento:',
+        '',
         'Localidad:',
+        '',
         'Obra social:',
-       'Turno que tenía otorgado (Médico/Especialidad, día que tiene el turno asignado'])
+        '',
+        'Turno que tenía otorgado (Médico/Especialidad, día que tiene el turno asignado)'])
 
 const flowModificarCancelarT = addKeyword(['2','modificacion'])
     .addAnswer([
         '*Indique si quiere Cancelar o modificar su turno*',
         '',
+        '*0*.- Retornar al menu inicial',
         '*1*.- Modificar',
         '*2*.- Cancelar'],
         null,
         null,
-        [flowModificarT, flowCancelarT])
+        [flowRetorno, flowModificarT, flowCancelarT])
 
 // #####
 // CONFIRMACION DE TURNOS
@@ -886,18 +1006,20 @@ const flowModificarCancelarT = addKeyword(['2','modificacion'])
 
 const flowConfirmacion = addKeyword(['3','confirmacion'])
     .addAnswer([
-    'Indique los siguientes datos para poder confirmar su turno',
-    'Apellido y nombre:',
-    'DNI:',
-    'Fecha de nacimiento:',
-    'Localidad:',
-    'Obra social:',
-    'Turno que tenía otorgado (Médico/Especialidad, día que tiene el turno asignado'])
-    /*.addAnswer('Has seleccionado al Médico 1. Por favor, ingresa tu nombre:', { capture: true }, async (message, { flowDynamic }) => {
-        const nombre = message.body;
-        console.log('Nombre ingresado:', nombre); // Verificar si se captura el nombre
-        await flowDynamic(`Gracias, ${nombre}.`);
-    });*/
+    'Indique los siguientes datos para poder *CONFIRMAR* su turno',
+    '',
+        'Apellido y nombre:',
+        '',
+        'DNI:',
+        '',
+        'Fecha de nacimiento:',
+        '',
+        'Localidad:',
+        '',
+        'Obra social:',
+        '',
+        'Turno que tenía otorgado (Médico/Especialidad, día que tiene el turno asignado)'])
+  
 
 
 
@@ -911,20 +1033,55 @@ const flowConsultas = addKeyword(['4','consultas'])
         '2344-454112',
         '2344-454114',
         '2344-454113',
-        'De lunes a viernes (días hábiles) en horario de 7:00 a 17:00 hs'])
+        'De lunes a viernes (días hábiles) en horario de 7:00 a 12:00 hs'])
 
 
+// DONAR SANGRE  
+
+// MENSAJE DE DONANTE VOLUNTARIO
+
+const flowDonacionVoluntaria = addKeyword(['1','voluntario']).addAnswer([
+    mensage2()])
+
+// MENSAJE DE DONANTE POR INTERVENCION
+
+const flowDonacionIntervencion = addKeyword(['2','intervencion']).addAnswer([
+    'Por favor, ingrese los siguientes datos:',
+    '',
+    'Apellido y nombre',
+    '',
+    'DNI',
+    '',
+    'Fecha de nacimiento',
+    '',
+    'Localidad',
+    '',
+    'Para quien donaras:',
+    '',
+    'Y luego aguarde mientras gestionamos su turno, recibirá un mensaje con la confirmación del mismo'
+    ])   
+
+const flowDonacionSangre = addKeyword(['5','donar'])
+    .addAnswer(['¿Para que voy a donar?:',
+        ' ',
+        '*0*.- Retornar al menu inicial',
+        '*1.-* Donante voluntario.',
+        '*2.-* Donación por cirugía o intervención.'],
+    null,
+    null,
+    [flowRetorno, flowDonacionIntervencion, flowDonacionVoluntaria])
 
 
 
 // MENU INICIAL 
 
 
-const flowHorarioAtencion = addKeyword(['repollo'])
+const flowHorarioAtencion = addKeyword('Hola', { sensitive: true })
+
     .addAnswer(
         [
-        //'¡Hola!',
-        //'  ',
+        '¡Hola!',
+        '  ',
         '🤖 Soy el Asistente Virtual del *Hospital Dr Posadas de Saladillo*',
         'Por favor escriba el número de la opción correspondiente',
         '  ',
@@ -932,38 +1089,65 @@ const flowHorarioAtencion = addKeyword(['repollo'])
         '*2.-*  Modificación o cancelación de turnos reservados',
         '*3.-*  Confirmación de asistencia',
         '*4.-*  Consultas',
+        '*5.-*  Quiero donar sangre 🩸'
         ],
         null,
         null,
-        [flowConsultas, flowConfirmacion, flowModificarCancelarT, flowResTurno]
-    )
-const flowFueraDeHorario = addKeyword(['repollo']).addAnswer([
+        [flowDonacionSangre, flowConsultas, flowConfirmacion, flowModificarCancelarT, flowResTurno])
+
+
+const flowFueraDeHorario = addKeyword(['fuera de horario']).addAnswer([
+    '¡Hola! Actualmente estamos *FUERA DEL HORARIO DE ATENCIÓN*. 🕔',
     '*Horarios de atención*',
-    'Lunes a viernes (días hábiles) de 7:00 a 12:00 Hs.',
+    'Lunes a viernes (días hábiles) de 7:00 a 10:00 Hs.',
     'Los *mensajes no quedan guardados*',
     'Por favor, vuelva a comunicarse.',
     'Muchas gracias'
 ])
 
- const flowPrincipal = addKeyword(['repollo'])
+const flowMenu = addKeyword(['menu']).addAnswer([
+    'Para iniciar el menú, escriba la palabra *Hola*'],
+    null,
+    null,
+    [flowHorarioAtencion])
+
+ const flowPrincipal = addKeyword(['turno','hola','buen','dia'])
     .addAction(async (_, {flowDynamic, gotoFlow}) => {
         // Verifica si está en horario de atención o no
     if (horarioActual()) {
             // Si está en horario de atención, redirige a `flowHorarioAtencion`
-        await flowDynamic('¡Hola!')
-        return gotoFlow(flowHorarioAtencion)
+        //await flowDynamic('¡Hola!')
+        return gotoFlow(flowMenu)
              // Cambiado para redirigir correctamente
     } else {
          // Si está fuera de horario, redirige a `flowFueraDeHorario`
-         await flowDynamic('¡Hola! Actualmente estamos *FUERA DEL HORARIO DE ATENCIÓN*. 🕔')
+        // await flowDynamic('¡Hola! Actualmente estamos *FUERA DEL HORARIO DE ATENCIÓN*. 🕔')
          return gotoFlow(flowFueraDeHorario) // Cambiado para redirigir correctamente
         }
     })
 
+// RETORNAR AL MENU PRINCIPAL
+
+/*const flowRetornar = addKeyword(['00'])
+.addAction(async (_, {flowDynamic, gotoFlow}) => {
+    // Verifica si está en horario de atención o no
+if (horarioActual()) {
+        // Si está en horario de atención, redirige a `flowHorarioAtencion`
+    await flowDynamic('¡Hola!')
+    return gotoFlow(flowHorarioAtencion)
+         // Cambiado para redirigir correctamente
+} else {
+     // Si está fuera de horario, redirige a `flowFueraDeHorario`
+     await flowDynamic('¡Hola! Actualmente estamos *FUERA DEL HORARIO DE ATENCIÓN*. 🕔')
+     return gotoFlow(flowFueraDeHorario) // Cambiado para redirigir correctamente
+    }
+})
+*/
+
 
 const main = async () => {
     const adapterDB = new MockAdapter()
-    const adapterFlow = createFlow([flowPrincipal])
+    const adapterFlow = createFlow([flowPrincipal, flowHorarioAtencion])
     const adapterProvider = createProvider(BaileysProvider)
 
     createBot({
