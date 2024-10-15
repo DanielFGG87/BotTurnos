@@ -343,9 +343,9 @@ const flowDrCondori = addKeyword(['3','condori']).addAnswer([
 const flowNeurocirugia = addKeyword(['10','neurocirugia']).addAnswer(['Por favor selecione el medico.'])
     .addAnswer([
         '*0*.- Retornar al menu inicial',
-        '*1*.- Dra. Gomez',
+        '*1*.- Dr. Gomez',
         '*2*.- Dra. Guerra',
-        '*3*.- Dr Condori'],
+        '*3*.- Dr. Condori'],
         null,
         null,
         [flowRetorno, flowDrGomez, flowDrGuerra, flowDrCondori])
@@ -359,7 +359,7 @@ const flowDrGiustozzi = addKeyword(['1','giustozzi']).addAnswer([
 const flowDrZanovello = addKeyword(['2','zanoveloo']).addAnswer([
     mensage()])
 
-const flowOftalmologia = addKeyword(['11', 'oftalmologia']).addAnswer(['Por favor selecione el medico.'])
+const flowOftalmologia = addKeyword(['11','oftalmologia'], {sensitive:true}).addAnswer(['Por favor selecione el medico.'])
     .addAnswer([
         '*0*.- Retornar al menu inicial',
         '*1*.- Dra. Giustozzi',
@@ -507,7 +507,7 @@ const flowOdonAdultos = addKeyword(['1', 'adultos']).addAnswer(['Porfavaor selec
     [flowRetorno, flowOdonAdulosMañana, flowOdonAdultosTarde])
 
 
-const flowOdontologia = addKeyword(['18', 'odontologia']).addAnswer(['Por favor selecione una opcion:'])
+const flowOdontologia = addKeyword(['18','odontologia'], {sensitive:true}).addAnswer(['Por favor selecione una opcion:'])
 .addAnswer([
     '*0*.- Retornar al menu inicial',
     '*1*.- Adultos',
@@ -1076,7 +1076,7 @@ const flowDonacionSangre = addKeyword(['5','donar'])
 // MENU INICIAL 
 
 
-const flowHorarioAtencion = addKeyword('Hola', { sensitive: true })
+const flowHorarioAtencion = addKeyword(['Hola','HOLA','hola'], { sensitive: true })
 
     .addAnswer(
         [
@@ -1126,23 +1126,6 @@ const flowMenu = addKeyword(['menu']).addAnswer([
         }
     })
 
-// RETORNAR AL MENU PRINCIPAL
-
-/*const flowRetornar = addKeyword(['00'])
-.addAction(async (_, {flowDynamic, gotoFlow}) => {
-    // Verifica si está en horario de atención o no
-if (horarioActual()) {
-        // Si está en horario de atención, redirige a `flowHorarioAtencion`
-    await flowDynamic('¡Hola!')
-    return gotoFlow(flowHorarioAtencion)
-         // Cambiado para redirigir correctamente
-} else {
-     // Si está fuera de horario, redirige a `flowFueraDeHorario`
-     await flowDynamic('¡Hola! Actualmente estamos *FUERA DEL HORARIO DE ATENCIÓN*. 🕔')
-     return gotoFlow(flowFueraDeHorario) // Cambiado para redirigir correctamente
-    }
-})
-*/
 
 
 const main = async () => {
