@@ -1,41 +1,39 @@
 [handleMsg]:  {
   key: {
-    remoteJid: '5492345651866@s.whatsapp.net',
+    remoteJid: '5491178929429@s.whatsapp.net',
     fromMe: false,
-    id: '2F5D453ED39123411BA723888E7B6BAD',
+    id: '3A82074B2B221DBEAB33',
     participant: undefined
   },
-  messageTimestamp: 1729033682,
-  pushName: 'Juan Carlos',
+  messageTimestamp: 1729134283,
+  pushName: 'Sofia Gomez',
   broadcast: false,
   message: Message {
-    conversation: '1',
+    conversation: 'Hola.',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2,
       messageSecret: [Uint8Array]
     }
   },
-  body: '1',
-  from: '5492345651866'
+  body: 'Hola.',
+  from: '5491178929429'
 }
-[handleMsg]:  {
-  key: {
-    remoteJid: '5492345651866@s.whatsapp.net',
-    fromMe: false,
-    id: '4C62B71BB16362D1EA15387A174E5AC9',
-    participant: undefined
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_4ef62338-7fb9-4777-9ef2-7f00774eb698',
+  keyword: 'key_27e2a8f4-b125-488d-8b5e-3cbb9170f3ab',
+  answer: '__call_action__',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
   },
-  messageTimestamp: 1729033698,
-  pushName: 'Juan Carlos',
-  broadcast: false,
-  message: Message {
-    protocolMessage: ProtocolMessage { key: [MessageKey], type: 0 },
-    messageContextInfo: MessageContextInfo {
-      deviceListMetadata: [DeviceListMetadata],
-      deviceListMetadataVersion: 2
-    }
-  },
-  body: '',
-  from: '5492345651866'
+  refSerialize: 'c005a58c94f35a92417666c37859bdb1'
 }

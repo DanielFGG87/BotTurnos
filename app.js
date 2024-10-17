@@ -364,7 +364,7 @@ const flowOftalmologia = addKeyword(['11','oftalmologia'], {sensitive:true}).add
         '*0*.- Retornar al menu inicial',
         '*1*.- Dra. Giustozzi',
         '*2*.- Dr Zanovello'],
-        //'Medico 3'
+        
         null,
         null,
         [flowRetorno, flowDrGiustozzi, flowDrZanovello])
@@ -512,7 +512,8 @@ const flowOdontologia = addKeyword(['18','odontologia'], {sensitive:true}).addAn
     '*0*.- Retornar al menu inicial',
     '*1*.- Adultos',
     '*2*.- Niños'],
-        // 'Medico 3'        null,
+        // 'Medico 3'        
+    null,
     null,
     [flowRetorno, flowOdonAdultos, flowOdonNiños])
 
@@ -1076,7 +1077,7 @@ const flowDonacionSangre = addKeyword(['5','donar'])
 // MENU INICIAL 
 
 
-const flowHorarioAtencion = addKeyword(['Hola','HOLA','hola'], { sensitive: true })
+const flowHorarioAtencion = addKeyword(['Hola','HOLA','hola','qwer'], { sensitive: true })
 
     .addAnswer(
         [
